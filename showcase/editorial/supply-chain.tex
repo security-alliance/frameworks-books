@@ -1,0 +1,36 @@
+\chapter{Supply chain}
+
+Your software is only as secure as its weakest
+dependency. Know what you depend on. Verify integrity.
+Have a plan for when something in the chain is
+compromised.
+
+Attackers do not need your Solidity. They need the npm
+package your front end imports, the CDN that serves it,
+or the contractor who opened a PR.
+
+\section{Insights}
+
+\begin{itemize}
+  \item The Web3 chain is longer: compilers, wallet
+  connectors, RPC, oracles, bridges, hardware.
+  \item Lockfiles are evidence. Regenerating them
+  casually is how a swap hides.
+  \item Typosquatting still works because people install
+  from a README they skimmed.
+  \item Human supply chain is the DPRK chapter. Hardware
+  is the wallet chapter. Do not mix the runbooks.
+\end{itemize}
+
+\section{Quick wins}
+
+\begin{enumerate}
+  \item Pin versions. Commit the lockfile. Diff it in
+  review.
+  \item Inventory direct dependencies and who owns each
+  one.
+  \item Restrict who can publish the front end. Integrity
+  hashes if you can.
+  \item When a library is hijacked, assume users already
+  loaded it. Incident, not a quiet bump.
+\end{enumerate}

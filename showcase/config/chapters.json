@@ -1,0 +1,60 @@
+{
+  "parts": [
+    {
+      "number": "01",
+      "title": "MAP",
+      "tagline": "What the frameworks are.",
+      "chapters": [
+        "docs/pages/intro/introduction.mdx",
+        "docs/pages/intro/overview-of-each-framework.mdx"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "PEOPLE",
+      "tagline": "How you live and who you let in.",
+      "chapters": [
+        "docs/pages/opsec/overview.mdx",
+        "docs/pages/physical-security/overview.mdx",
+        "docs/pages/privacy/overview.mdx",
+        "docs/pages/community-management/overview.mdx",
+        "docs/pages/dprk-it-workers/overview.mdx"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "KEYS",
+      "tagline": "How money moves.",
+      "chapters": [
+        "docs/pages/wallet-security/overview.mdx",
+        "docs/pages/multisig-for-protocols/overview.mdx",
+        "docs/pages/multisig-for-protocols/key-takeaways.mdx",
+        "docs/pages/treasury-operations/overview.mdx"
+      ]
+    },
+    {
+      "number": "04",
+      "title": "SHIP",
+      "tagline": "How you build and run.",
+      "chapters": [
+        "docs/pages/devsecops/overview.mdx",
+        "docs/pages/supply-chain/overview.mdx",
+        "docs/pages/infrastructure/overview.mdx",
+        "docs/pages/monitoring/overview.mdx",
+        "docs/pages/ai-security/overview.mdx"
+      ]
+    },
+    {
+      "number": "05",
+      "title": "BREAK",
+      "tagline": "What you do when it fails.",
+      "chapters": [
+        "docs/pages/incident-management/overview.mdx",
+        "docs/pages/safe-harbor/overview.mdx",
+        "docs/pages/security-testing/overview.mdx",
+        "docs/pages/external-security-reviews/overview.mdx",
+        "docs/pages/awareness/overview.mdx"
+      ]
+    }
+  ]
+}

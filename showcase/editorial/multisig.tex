@@ -1,0 +1,38 @@
+\chapter{Protocol multisig}
+
+If you read one multisig page, make it this: timelocks,
+function separation, dedicated keys, calldata
+verification, and a monitored queue beat unenforced
+policy.
+
+A 4-of-7 with no delay and one shared seed is one
+compromised person away from a governance drain. The
+Protocol Multisig companion is the signer-first deep
+cut. Safe is the default stack there.
+
+\section{Insights}
+
+\begin{itemize}
+  \item Separate upgrade, pause, parameters, and
+  treasury. One Safe that does everything is a single
+  point of failure.
+  \item Emergency paths should pause, not upgrade or
+  move funds.
+  \item Hash checks confirm you signed the intended
+  bytes. Decode still tells you what those bytes do.
+  \item Anyone can add you to a fake Safe that looks
+  like yours. Bookmarks, not the dashboard.
+\end{itemize}
+
+\section{Quick wins}
+
+\begin{enumerate}
+  \item Inventory every privileged role and which
+  multisig holds it.
+  \item Hardware wallets for every signer. Dedicated
+  address per Safe.
+  \item Delegated proposer. Sign only. A non-signer
+  executes.
+  \item Alert on queued transactions, including a
+  channel the internal team cannot mute.
+\end{enumerate}

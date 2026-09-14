@@ -1,0 +1,36 @@
+\chapter{DevSecOps}
+
+DevSecOps works when security is in the path from plan
+to ship. Automated checks stop unsafe changes before
+production. Sandboxes contain the blast when untrusted
+code or tooling runs.
+
+If the pipeline can deploy, the pipeline is a production
+key. Treat it that way.
+
+\section{Insights}
+
+\begin{itemize}
+  \item Untrusted repos execute. Git hooks, IDE plugins,
+  install scripts, agent tools. Opening a folder is
+  already a decision.
+  \item Signed commits only help if you verify the
+  signer.
+  \item Secrets in CI logs are public secrets with extra
+  steps.
+  \item Governance proposals are code too. An upgrade
+  text is a transaction waiting to happen.
+\end{itemize}
+
+\section{Quick wins}
+
+\begin{enumerate}
+  \item Branch protection, MFA, CODEOWNERS. No force
+  push to default.
+  \item SAST and tests on every change. Fail the build
+  on high findings you have not waived.
+  \item Ephemeral runners. No standing SSH to the build
+  box.
+  \item Do not run random tools on the machine that
+  holds deploy keys. Sandbox them.
+\end{enumerate}

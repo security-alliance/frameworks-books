@@ -1,0 +1,33 @@
+\chapter{Monitoring}
+
+Monitoring only improves security when every alert has
+an owner and a documented response. Detection without
+action is a diary of the hack.
+
+This framework is on-chain: large transfers, mints,
+admin changes, upgrades, oracle drift. Host metrics
+belong in DevSecOps and infra.
+
+\section{Insights}
+
+\begin{itemize}
+  \item If nobody can pause, the alert is trivia.
+  \item Thresholds that fire all day get muted. Tune
+  them or lose them.
+  \item One provider is one outage. Critical invariants
+  deserve two independent watchers.
+  \item External monitoring matters so an inside
+  compromise cannot silence the bell.
+\end{itemize}
+
+\section{Quick wins}
+
+\begin{enumerate}
+  \item Write, for each alert: who gets it, what they
+  do, how they confirm it worked.
+  \item Watch admin, upgrade, and treasury events first.
+  \item Page a human. Slack-only is how nights are
+  missed.
+  \item Tie alerts to the incident chapter before you
+  buy another dashboard.
+\end{enumerate}

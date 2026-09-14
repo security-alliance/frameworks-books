@@ -1,0 +1,34 @@
+\chapter{Infrastructure}
+
+Web3 front ends and ops still run on centralized
+infrastructure. Inventory it. Harden cloud and DNS.
+Weigh one-vendor simplicity against a shared failure
+domain.
+
+Smart contracts get the audits. DNS hijacks steal the
+users. Both are the protocol as far as the victim is
+concerned.
+
+\section{Insights}
+
+\begin{itemize}
+  \item You cannot protect what you have not listed.
+  \item Registrar locks and DNSSEC are boring until the
+  domain is gone.
+  \item One vendor for host, DDoS, registrar, and DNS is
+  easy. It is also one ticket away from a total outage.
+  \item Zero trust means verify again, not trust the
+  office IP.
+\end{itemize}
+
+\section{Quick wins}
+
+\begin{enumerate}
+  \item List domains, clouds, and who can change them.
+  \item Registry lock on the main domain. 2FA on the
+  registrar, not SMS.
+  \item Default-deny network. Patch the boxes that still
+  exist.
+  \item Monitor DNS and cert changes like you monitor
+  the vault.
+\end{enumerate}

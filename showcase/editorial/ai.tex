@@ -1,0 +1,34 @@
+\chapter{AI security}
+
+Agentic AI turns instruction-following into irreversible
+actions. Prefer runtime gates and isolation over a
+clever system prompt.
+
+A model that can browse, run tools, or draft a
+transaction is a new intern with production access and
+no judgment. Prompt templates will not save you.
+
+\section{Insights}
+
+\begin{itemize}
+  \item Models treat text as instructions. Untrusted
+  pages and tickets are control input.
+  \item Block or quarantine unsafe outputs before they
+  leave. Review after send is theater.
+  \item Developer agents need sandboxes. Non-developer
+  SaaS needs data classification and approved apps.
+  \item Isolation for tool runners lives in DevSecOps.
+  Implement it there.
+\end{itemize}
+
+\section{Quick wins}
+
+\begin{enumerate}
+  \item No production keys in the agent environment.
+  \item Allow, warn, or block at the tool call, not in
+  a later log.
+  \item Do not paste seeds, dump files, or customer data
+  into a consumer chat.
+  \item Treat AI-browser content as hostile until
+  inspected.
+\end{enumerate}

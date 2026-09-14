@@ -9,6 +9,7 @@ on:
       - "opsec/**"
       - "multisig/**"
       - "wallet/**"
+      - "showcase/**"
       - "common/**"
       - ".github/workflows/build.yml"
   pull_request:
@@ -17,6 +18,7 @@ on:
       - "opsec/**"
       - "multisig/**"
       - "wallet/**"
+      - "showcase/**"
       - "common/**"
       - ".github/workflows/build.yml"
 
@@ -83,3 +85,18 @@ jobs:
           path: |
             wallet/output/pdf/wallet-security-pocket-guide.pdf
             wallet/output/wallet-security-pocket-guide-latex-source.zip
+
+  showcase:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Test anonymous container wrapper
+        run: python3 -m unittest discover -s showcase/tests -v
+      - name: Build and verify in the container
+        run: CONTAINER_ENGINE=docker ./showcase/container/build.sh
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: security-frameworks-pocket-showcase
+          path: |
+            showcase/output/pdf/security-frameworks-pocket-showcase.pdf
+            showcase/output/security-frameworks-pocket-showcase-latex-source.zip

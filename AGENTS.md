@@ -17,6 +17,7 @@ this checkout sits at `frameworks/books/`.
 | `opsec/` | OpSec While Traveling | Follow the printed v1.0 companion. Update facts from live `opsec/travel` without changing the three-phase spine. |
 | `multisig/` | Protocol Multisig | Rewritten for print from `multisig-for-protocols`. Signer-first. Safe is the default stack. Spine: separate / delay / verify. |
 | `wallet/` | Wallet Security | Rewritten for print. Person who signs. Stubs and protocol-multisig runbooks stay off the page. |
+| `showcase/` | Security Frameworks 101 | Rewritten for print. Takeaways from the mature public frameworks. Dedicated companions stay the deep cuts. |
 
 Start a new book by copying an existing book directory. Do not design a
 new cover or trim. Identity lives in that book's `style.tex`.

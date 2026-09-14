@@ -1,0 +1,37 @@
+\chapter{Testing and reviews}
+
+No single test type proves a contract safe. Combine
+unit and integration coverage, fuzzing, static analysis,
+and, where the math is load-bearing, formal methods.
+Then see whether the suite notices real faults.
+
+An external review is a time-boxed expert pass. It
+reduces risk and teaches the team. It is not a
+certificate of safety. Pair it with prep, fixes, and
+tests that keep running after the PDF.
+
+\section{Insights}
+
+\begin{itemize}
+  \item Coverage without assertions is a green bar that
+  lies.
+  \item Mutation testing asks whether your tests would
+  catch a one-line cheat.
+  \item Audits fail when the spec is missing and the
+  scope is whatever is in the repo.
+  \item Findings you do not fix are a press release, not
+  a review.
+\end{itemize}
+
+\section{Quick wins}
+
+\begin{enumerate}
+  \item Unit and fork tests on every change. Fuzz the
+  invariants that would bankrupt you.
+  \item Slither or equivalent in CI. Do not ignore high
+  findings.
+  \item Write the spec the reviewers should attack.
+  Freeze scope.
+  \item Track every finding to a fix or an explicit
+  accept. Then keep testing.
+\end{enumerate}
