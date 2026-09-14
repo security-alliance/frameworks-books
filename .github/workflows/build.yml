@@ -7,11 +7,15 @@ on:
     paths:
       - "physical/**"
       - "opsec/**"
+      - "multisig/**"
+      - "common/**"
       - ".github/workflows/build.yml"
   pull_request:
     paths:
       - "physical/**"
       - "opsec/**"
+      - "multisig/**"
+      - "common/**"
       - ".github/workflows/build.yml"
 
 permissions:
@@ -47,3 +51,18 @@ jobs:
           path: |
             opsec/output/pdf/opsec-while-traveling.pdf
             opsec/output/opsec-while-traveling-latex-source.zip
+
+  multisig:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Test anonymous container wrapper
+        run: python3 -m unittest discover -s multisig/tests -v
+      - name: Build and verify in the container
+        run: CONTAINER_ENGINE=docker ./multisig/container/build.sh
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: protocol-multisig
+          path: |
+            multisig/output/pdf/protocol-multisig.pdf
+            multisig/output/protocol-multisig-latex-source.zip

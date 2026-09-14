@@ -1,0 +1,56 @@
+\chapter{Keep the set alive}
+
+A set that nobody can rotate is a set that will
+fail closed or fail open. Both are bad.
+
+\section{Practice before mainnet}
+
+Create, sign, rotate an owner on testnet. Then a
+tiny transfer on mainnet with every signer, on the
+real channels. If someone cannot sign the test,
+they cannot sign the pause.
+
+\section{Rotation}
+
+Signers can change. Document it. Do not shrink N
+or M without a written reason.
+
+If the old key still works, prove the new address
+with the old one, then follow the same ownership
+proof as joining.
+
+If the old key is gone, identity first, then add.
+
+Admin changes go through two channels, not one
+chat.
+
+\section{Offboard}
+
+Leaving is not logging out. Schedule the removal,
+execute it, confirm your address is gone on-chain,
+update the inventory, leave the channels, delete
+local copies, hand over anything still pending.
+
+Agree the clock in advance. Emergency sets may
+need removal in a couple of days. Others can wait
+a week or two. Residual signer rights are still
+signer rights.
+
+\section{Watch the set}
+
+Alert on proposed transactions, new signatures,
+owner changes. Watch the signer EOAs too:
+activity that is not a multisig operation is a
+smell.
+
+Monitoring channels should be hard to mute
+quietly. Tampering with the alert channel should
+itself alert.
+
+\section{Paper that survives people}
+
+Purpose, rules, Safe address, signer addresses,
+who proposes, who executes, backup UI, backup
+RPC, who to page. If that page lives in one
+person's head, they are a single point of failure
+wearing documentation as a costume.

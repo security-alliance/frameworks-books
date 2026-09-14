@@ -9,7 +9,7 @@ die() {
 project_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
 common_dir="$(cd -- "$project_dir/../common" 2>/dev/null && pwd -P || true)"
 [[ -f "${common_dir:-}/pocket.tex" ]] || die "shared common/pocket.tex missing; look at ../common before building"
-image="${BOOK_BUILD_IMAGE:-seal-physical-security-book:anonymous-v2}"
+image="${BOOK_BUILD_IMAGE:-seal-multisig-book:anonymous-v1}"
 target="${1:-package}"
 if (( $# > 0 )); then
   shift
@@ -117,9 +117,9 @@ frameworks_repo="${FRAMEWORKS_REPO:-}"
 if [[ -z "$frameworks_repo" ]]; then
   in_repo_candidate="$(cd -- "$project_dir/../.." 2>/dev/null && pwd -P || true)"
   adjacent_candidate="$(cd -- "$project_dir/../frameworks" 2>/dev/null && pwd -P || true)"
-  if [[ -d "$in_repo_candidate/docs/pages/physical-security" ]]; then
+  if [[ -d "$in_repo_candidate/docs/pages/multisig-for-protocols" ]]; then
     frameworks_repo="$in_repo_candidate"
-  elif [[ -d "$adjacent_candidate/docs/pages/physical-security" ]]; then
+  elif [[ -d "$adjacent_candidate/docs/pages/multisig-for-protocols" ]]; then
     frameworks_repo="$adjacent_candidate"
   fi
 fi

@@ -67,6 +67,8 @@ class ContainerWrapperTests(unittest.TestCase):
         self.assertIn("1000:1000", record["args"])
         offset = record["args"].index("--network")
         self.assertEqual(record["args"][offset + 1], "none")
+        common = str((PROJECT.parent / "common").resolve())
+        self.assertIn(f"type=bind,src={common},dst=/work/common,ro", record["args"])
 
     def test_podman_explicit_anonymous_file_and_no_helpers(self):
         result, records = self.invoke("podman")

@@ -1,0 +1,76 @@
+\chapter{Map the powers}
+
+Do not pick a threshold yet. First write down what
+the protocol can actually do to itself.
+
+If nobody can name who holds \texttt{upgradeTo},
+\texttt{owner}, \texttt{pauser}, or the treasury,
+you do not have a multisig design. You have a
+spreadsheet of addresses.
+
+\section{Access control inventory}
+
+For every privileged role, record:
+
+\begin{itemize}
+  \item Role name on-chain.
+  \item Which address or Safe holds it.
+  \item Which contract it controls.
+  \item What it can do, in functions, not slogans.
+  \item What already constrains it: timelock,
+  parameter bounds, governance.
+  \item Blast radius if that role is evil, or
+  silent.
+\end{itemize}
+
+Keep it living. New deploy, new role, update the
+page. This inventory is what later chapters call
+``the set.''
+
+\section{Two questions}
+
+For each role, answer both:
+
+\begin{enumerate}
+  \item What happens if this set is compromised?
+  \item What happens if this set cannot sign for
+  a week?
+\end{enumerate}
+
+Upgrade gone wrong can rewrite the protocol.
+Pause gone missing can leave it draining.
+Treasury gone missing can freeze payroll and
+grants. Those are different failures. They want
+different sets.
+
+\section{Impact, not a dollar table}
+
+The website uses dollar bands as a thinking aid.
+They are examples, not policy. Err toward slower
+and higher when you are between two labels.
+
+Think in four words:
+
+\begin{itemize}
+  \item \textbf{Low.} Alternative path exists.
+  Protocol barely notices.
+  \item \textbf{Medium.} Ugly week. Recoverable.
+  \item \textbf{High.} Users feel it. Recovery is
+  a project.
+  \item \textbf{Critical.} Protocol-wide failure
+  or a treasury you cannot shrug off.
+\end{itemize}
+
+Then ask how fast it must move: routine (a day or
+two), time-sensitive (hours), emergency (minutes).
+A critical emergency pause is not designed like a
+critical upgrade. One wants speed and a tiny
+blast radius. The other wants slowness and a high
+threshold.
+
+\section{Write the decision down}
+
+Purpose, assets, how often it signs, how fast it
+must respond, who is in the room. If that page
+does not exist, the rest of this book is
+improvisation.

@@ -2,6 +2,8 @@
 
 LaTeX sources for pocket editions of Security Alliance frameworks.
 Trim size is 70 x 110 mm, matching the printed travel OpSec mini-book.
+Shared cover and layout live in [`common/pocket.tex`](common/pocket.tex).
+Look there before changing type, trim, or the night cover.
 
 ## Books
 
@@ -9,14 +11,14 @@ Trim size is 70 x 110 mm, matching the printed travel OpSec mini-book.
 | --- | --- |
 | [`physical/`](physical/) | Physical Security pocket guide |
 | [`opsec/`](opsec/) | OpSec While Traveling |
-
+| [`multisig/`](multisig/) | Protocol Multisig |
 
 ## Build
 
 Each book directory is self-contained. Podman or Docker is enough:
 
 ```sh
-cd physical   # or: cd opsec
+cd physical   # or: cd opsec  /  cd multisig
 ./container/build.sh
 ```
 

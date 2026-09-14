@@ -1,0 +1,66 @@
+\chapter{Split the sets}
+
+Do not put all admin privileges in one Safe. If
+that one set is compromised, everything is lost.
+Separate functional areas so one bad day cannot
+upgrade, pause, and drain treasury in one shot.
+
+\section{Why split}
+
+Blast radius. Right-sized security. The people who
+understand an upgrade are not always the people who
+should move funds. Pause needs to be reachable at
+3am. Upgrade should be boring and slow.
+
+No single set should have both pause and upgrade
+unless the upgrade path is gated by a timelock
+you actually monitor.
+
+\section{Shapes, as examples}
+
+These are starting points, not law. Match them to
+the inventory you just wrote.
+
+\begin{itemize}
+  \item \textbf{Protocol upgrades.} High threshold
+  (think 7-of-9 or similar). Long delay, a week or
+  more. Users may need time to leave.
+  \item \textbf{Operational parameters.} Moderate
+  threshold. Medium delay, a couple of days.
+  Parameter bounds on-chain beat ``please be
+  careful.''
+  \item \textbf{Emergency pause.} Lower threshold
+  (think 2-of-4). No timelock. Constrained to
+  pause-only. This set must not upgrade or move
+  funds.
+  \item \textbf{Treasury.} High threshold, different
+  people from upgrade. Split large pots across
+  wallets. Hot wallet is an intermediary, not the
+  vault.
+  \item \textbf{Specialized subsystem.} Oracle,
+  bridge, whatever domain experts you actually
+  have. Moderate, medium delay.
+\end{itemize}
+
+\section{Treasury extra}
+
+If the Safe holds DAO assets, plan a governance
+rescue path (the framework names the Allowance
+module for this). Cold storage holds the bulk.
+Hot wallet at least 2-of-3. High-value sets want
+at least one required signer outside the
+organization.
+
+Seldom-used wallets get longer delays. Any
+activity on them should wake the whole team.
+
+\section{On-chain beats policy}
+
+Whitelist destinations. Bound parameters. Revert
+on broken invariants. A compromised set that
+cannot call \texttt{upgradeTo} or send to a random
+address is a bad week, not a funeral.
+
+Do not install extra Safe modules or guards
+without a review you would defend in public.
+Wrong module can brick the set.

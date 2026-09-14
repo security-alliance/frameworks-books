@@ -1,0 +1,66 @@
+\chapter{Who may sign}
+
+The security of the set is the independence of the
+signers. M-of-N is a story until the M cannot be
+collected from one apartment, one employer, or one
+compromised seed.
+
+\section{The floor}
+
+\begin{itemize}
+  \item At least three signers. Never N-of-N: lose
+  one key, brick the set.
+  \item Hardware wallets. Browser-extension keys
+  are not signers, they are incidents waiting.
+  \item Around half the set as threshold, then
+  raise it for upgrades and large treasuries.
+  \item Dedicated address per Safe. Same device is
+  fine if you use a different index and label it.
+  Same seed still couples them: seed theft hits
+  every index.
+\end{itemize}
+
+High-value sets want an external required signer:
+security partner, advisor, someone who does not
+share your Slack.
+
+\section{Independence}
+
+Spread people, orgs, devices, manufacturers,
+geography. Mix roles: not five copies of the same
+founder. Enough technical signers that someone in
+the quorum can actually read calldata.
+
+Do not store two signer keys on one laptop and
+call it distribution.
+
+\section{Proposer is not signer}
+
+On Safe, authorize a delegated proposer that
+cannot sign. Hash tools read the Safe API. The API
+only has the transaction after it is proposed.
+Without a proposer, the first signer is flying
+blind.
+
+All signers sign only. A non-signer executes.
+Never ``sign and execute'' for the last signature.
+Verification tools do not give you the hashes you
+think they do for that combined action.
+
+\section{Nested Safes}
+
+A Safe as owner of another Safe. Sometimes an
+entity wants 1-of-N inside their nest. The nested
+set can then rotate its own owners without the
+parent's consent.
+
+Usually do not do this on a protocol set unless
+you can explain why in writing.
+
+\section{You can refuse}
+
+If the set is God-mode, N-of-N, no hardware, no
+delay on upgrades, or ``we all use the same
+laptop,'' do not join. Being signer number six on
+a theater quorum does not make you safer. It makes
+you liable.

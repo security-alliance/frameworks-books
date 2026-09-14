@@ -7,6 +7,8 @@ die() {
 }
 
 project_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+common_dir="$(cd -- "$project_dir/../common" 2>/dev/null && pwd -P || true)"
+[[ -f "${common_dir:-}/pocket.tex" ]] || die "shared common/pocket.tex missing; look at ../common before building"
 image="${BOOK_BUILD_IMAGE:-seal-opsec-book:anonymous-v1}"
 target="${1:-package}"
 if (( $# > 0 )); then
@@ -95,6 +97,7 @@ run_args=(
   --tmpfs /tmp:rw,nosuid,nodev,noexec,size=512m
   --user "$(id -u):$(id -g)"
   --mount "type=bind,src=$project_dir,dst=/work"
+  --mount "type=bind,src=$common_dir,dst=/work/common,ro"
 )
 
 if [[ "$engine" == podman ]]; then

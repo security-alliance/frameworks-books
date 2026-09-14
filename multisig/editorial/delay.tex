@@ -1,0 +1,69 @@
+\chapter{Delay}
+
+Build slowness in on purpose. Speed is a risk.
+Forced urgency is how attackers push a signing
+ceremony past verification.
+
+Without a timelock, once you have threshold
+signatures the change lands immediately. There is
+no window to notice. Legitimate operations can
+wait. If they cannot, they probably belong on the
+pause-only set, not the upgrade set.
+
+\section{Tiered delays}
+
+Not every change is an upgrade.
+
+\begin{itemize}
+  \item \textbf{Long (7--14+ days).} Upgrades,
+  token changes, anything users should be able to
+  exit.
+  \item \textbf{Medium (48--72 hours).} Fees,
+  oracles, validator sets. Time to review.
+  \item \textbf{Short (hours to a day).} Routine
+  knobs inside bounds you already enforced
+  on-chain.
+  \item \textbf{None.} Pause-only. Nothing else.
+\end{itemize}
+
+A default of a few days is a reasonable floor for
+things that are not emergencies. Even an hour with
+someone watching beats zero.
+
+\section{The window is the control}
+
+A timelock with nobody watching is decoration. The
+malicious payload just waits, then executes.
+
+Watch queue, execute, and cancel. Alerts must
+include decoded details: target, function,
+parameters. Not ``something happened.''
+
+At least one watch is run by someone outside the
+core team, so an insider cannot mute every
+channel. Use more than one channel. If the Slack
+is owned, email still rings.
+
+Make the queue visible to the community if you
+can. Extra eyeballs are part of the delay.
+
+\section{Simulate the right thing}
+
+When you sign a timelock queue, the simulation
+shows the staging event, not the eventual effect.
+Inspect the staged payload. Check who can cancel
+and who can execute.
+
+After it lands, verify the on-chain result against
+what you thought you queued. Local review and
+broadcast payload are not guaranteed to be the
+same thing.
+
+\section{Emergency bypass}
+
+If you can skip the delay, that path must be
+pause-only. Never upgrade. Never move funds.
+
+A smaller veto group can cancel. Bypassing a
+timelock, if you allow it at all, should need the
+normal quorum plus extra signers, not fewer.

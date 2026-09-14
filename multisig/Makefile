@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-FRAMEWORKS_REPO ?= ../frameworks
+FRAMEWORKS_REPO ?= ../../vocs
 REF ?= develop
 BASE_URL ?= https://frameworks.securityalliance.dev
 USE_GENERATED ?= 0
@@ -35,21 +35,21 @@ pdf:
 	mkdir -p build output/pdf
 	$(LATEXMK) $(LATEXMK_ENGINE) -interaction=nonstopmode -halt-on-error -file-line-error \
 		-outdir=build book.tex
-	cp build/book.pdf output/pdf/physical-security-pocket-guide.pdf
+	cp build/book.pdf output/pdf/protocol-multisig.pdf
 
 verify: pdf
-	$(PYTHON) scripts/verify_pdf.py output/pdf/physical-security-pocket-guide.pdf
+	$(PYTHON) scripts/verify_pdf.py output/pdf/protocol-multisig.pdf
 
 render: pdf
 	mkdir -p tmp/rendered
 	$(PDFTOPPM) \
-		-png -r 150 output/pdf/physical-security-pocket-guide.pdf tmp/rendered/page
+		-png -r 150 output/pdf/protocol-multisig.pdf tmp/rendered/page
 
 package: verify
 	mkdir -p output
-	zip -FSqr output/physical-security-pocket-guide-latex-source.zip \
+	zip -FSqr output/protocol-multisig-latex-source.zip \
 		book.tex style.tex Makefile README.md LICENSE.md Containerfile .dockerignore \
-		assets config container editorial scripts generated tests .github common \
+		assets config container editorial scripts generated tests common \
 		-x '*/__pycache__/*'
 
 container:

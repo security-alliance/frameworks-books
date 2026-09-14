@@ -1,0 +1,77 @@
+\chapter{When it breaks}
+
+Pre-agree the steps. Do not invent process under
+pressure.
+
+\section{Key compromise, first 30 minutes}
+
+\begin{enumerate}
+  \item Stop non-emergency transactions.
+  \item Notify on every channel, including the
+  backup. Use the template later in this chapter.
+  \item Scope: which keys, which devices.
+  \item Escalate to whoever your security contact
+  is.
+  \item Write the timeline down while you still
+  remember it.
+\end{enumerate}
+
+Then isolate devices, new hardware, new seed,
+rotate the signer on-chain, confirm the new setup
+before anything resumes.
+
+Lost key is not compromise. Try the backup device.
+Call the team on the backup channel. Do not panic.
+You will need video (or the pre-agreed identity
+check) because you cannot sign a proof with the
+missing key.
+
+\section{Channel takeover}
+
+If Signal, Telegram, or Discord is gone, assume
+recent messages are hostile. Alert on the other
+platform. Cancel anything that started in the
+compromised thread. Video the person. Do not
+resume until the rest of the set says the account
+is clean.
+
+\section{Backup UI}
+
+Practice this on a quiet day. Backup
+infrastructure you first touch during an incident
+is not infrastructure.
+
+For Safe: Eternal Safe (self-host or IPFS), plus
+your own RPC. For Squads: the public client, same
+idea. Self-hosted Safe UI if you already run one.
+
+Treat emergency UIs as extra-untrusted. Verify
+harder, not less.
+
+Have more than one RPC provider. Public RPC is a
+fair-weather tool.
+
+\section{Pause}
+
+The emergency set executes pause. Streamlined
+verification, not skipped verification. Geographic
+spread so someone is awake. Afterward, write down
+what you signed and why.
+
+\section{Drills}
+
+Paging test often enough that it is boring. Full
+simulation once a year with the actual signers.
+Measure time to threshold. Update the runbook
+when it fails, not in the postmortem of a real
+pause.
+
+\section{Say it clearly}
+
+Something like:
+
+{\fontsize{8}{10}\selectfont\ttfamily
+[URGENT] Multisig incident -- [name]\\
+address / class / type / when / who\\
+what happened, what we stopped,\\
+who can still sign, which channel is live\par}

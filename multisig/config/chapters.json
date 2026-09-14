@@ -1,0 +1,20 @@
+{
+  "parts": [
+    {
+      "number": "01",
+      "title": "MULTISIG",
+      "tagline": "Separate powers, delay what can wait, verify the effect.",
+      "chapters": [
+        "docs/pages/multisig-for-protocols/overview.mdx",
+        "docs/pages/multisig-for-protocols/key-takeaways.mdx",
+        "docs/pages/multisig-for-protocols/planning-and-classification.mdx",
+        "docs/pages/multisig-for-protocols/use-case-specific-requirements.mdx",
+        "docs/pages/multisig-for-protocols/joining-a-multisig.mdx",
+        "docs/pages/multisig-for-protocols/emergency-procedures.mdx",
+        "docs/pages/wallet-security/secure-multisig-best-practices.mdx",
+        "docs/pages/wallet-security/signing-and-verification/secure-multisig-signing-process.mdx",
+        "docs/pages/wallet-security/signing-and-verification/secure-multisig-safe-verification.mdx"
+      ]
+    }
+  ]
+}

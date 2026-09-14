@@ -1,0 +1,133 @@
+\chapter{Verify before you sign}
+
+This is the 1am chapter. If you skip it, the rest
+of the book was conversation.
+
+Safe is the default here because that is the
+de-facto protocol wallet. Squads and others want
+the same job: match an independent hash, decode
+the effect, refuse what you do not understand.
+Their screens differ. The job does not.
+
+You are not confirming a hash. You are authorizing
+an on-chain effect.
+
+\section{Before anything else}
+
+Hardware wallet. Separate browser profile for
+signing. Dedicated machine if you can; your daily
+laptop is a malware lottery.
+
+Confirm you are on the bookmarked Safe, full
+address, not the dashboard lookalike.
+
+If the queue item is unclear, do not sign. Ask.
+Every payload should arrive with a ``how to check''
+note. A message from a co-signer is not a third
+party.
+
+\section{Two phases (Safe / EVM)}
+
+When you add a signature you are usually not
+sending a transaction. You are signing an EIP-712
+message.
+
+\begin{itemize}
+  \item \textbf{Domain hash.} Tied to this Safe
+  and network. Stops replay elsewhere.
+  \item \textbf{Message hash.} The parameters.
+  This is what the hardware wallet shows.
+  \item \textbf{SafeTxHash.} Domain plus message.
+  Nested approvals use this.
+\end{itemize}
+
+Recompute the hash locally from nonce, to, value,
+data, and the rest. Compare the entire hash on the
+device, not the first and last characters. They
+must match.
+
+At least two devices, two channels. At least two
+signers simulate. Simulations lie: they can show
+one thing and the chain can do another. Use your
+brain.
+
+Once M signatures exist, execution is a new
+on-chain call: \texttt{execTransaction}. Decode
+that calldata. Check the inner \texttt{to},
+\texttt{value}, and \texttt{data} still match what
+you approved. Re-verify as if you had never seen
+it.
+
+\section{Hash is not intent}
+
+Matching hashes means you are signing the proposed
+transaction. It does not tell you what it does.
+Decode the calldata.
+
+EVM calldata starts with a 4-byte selector, then
+ABI-encoded arguments. \texttt{0xa9059cbb} is
+\texttt{transfer}. For MultiSend, decode every
+inner call. One extra call in a batch is how
+``just a transfer'' becomes an approval.
+
+Checksummed addresses only.
+
+If Safe infrastructure is itself hostile, a CLI
+that reads the Safe API can agree with the UI and
+still be wrong. Decode the calldata the tool
+prints. Interactive mode that does not decode is
+not a complete check.
+
+\section{Red flags. Stop.}
+
+\keepblock{%
+\fontsize{8}{10}\selectfont
+\setlength{\parskip}{0.7mm}
+\colophonlabel{Do not sign}
+
+\texttt{DELEGATECALL} (operation 1) unless the
+target is a known, audited module.
+
+Unexpected \texttt{approve} or\\
+\texttt{setApprovalForAll}.
+
+\texttt{MultiSend} when you were briefed on a
+single action.
+
+Unknown selector. Unverified target contract.
+Wrong recipient, amount, or destination.
+
+Decoded function and simulation disagree. The
+Bybit theft looked benign in the decoder while
+the unverified contract did something else.
+Reconcile both, or walk away.
+}
+
+\section{Address book}
+
+Never copy addresses from explorer history, chat,
+or email. Poisoning is real. Copy from a maintained
+address book or the custody UI.
+
+New recipient: tiny transfer both ways before any
+real amount. Large send: read the address
+character by character on a video call. If they
+``changed wallets,'' treat it as a first-time
+recipient again.
+
+\section{After you sign}
+
+Say it: ``checked, signed, X more required.'' Last
+signer executes, or says they cannot. If someone
+else executes later, they re-check from scratch.
+
+Do not all use the same verification tool.
+
+\section{Solana / Squads}
+
+Architecture and what the device displays are
+different. The job is the same: independent
+recompute, decode the instruction, do not trust
+the hosted UI alone. Use that stack's current
+verification page when you are on it. Do not
+improvise a Safe ritual on a Squads payload.

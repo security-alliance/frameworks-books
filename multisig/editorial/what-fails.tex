@@ -1,0 +1,57 @@
+\chapter{What actually fails}
+
+A poorly run multisig is theater. The contract did its
+job. The people did not.
+
+Most protocol losses that involve a ``multisig'' are
+not broken signature math. Someone signed the wrong
+thing. Someone was unavailable when pause was needed.
+Someone put upgrade, treasury, and pause on the same
+Safe because it was simpler. Someone copied an address
+from an explorer. Someone trusted the UI.
+
+You are the control. The hardware wallet is a locked
+box. It will happily sign a theft if you confirm the
+hash without reading the effect.
+
+\section{The failure modes that matter}
+
+\begin{itemize}
+  \item \textbf{God-mode set.} One Safe owns
+  everything. Compromise once, lose the protocol.
+  \item \textbf{Rubber stamps.} Threshold signatures
+  collected, nobody decoded the calldata.
+  \item \textbf{Silent delay.} Timelock queued a
+  malicious payload. Nobody was watching, so it
+  executed on schedule.
+  \item \textbf{Coupled signers.} Same seed, same
+  laptop, same apartment, same employer. The M in
+  M-of-N was a story.
+  \item \textbf{Stuck set.} N-of-N, or keys lost,
+  or no backup UI when Safe.app is dark.
+  \item \textbf{Lookalike Safe.} Anyone can add you
+  as owner of a Safe they created. Dashboard lists
+  lie.
+\end{itemize}
+
+\section{What this book is not}
+
+It is not a Safe tutorial. Buttons move. The checks
+do not: full address, decoded function, simulated
+effect, independent hash.
+
+It is not Wallet Security. Seed hygiene, hardware
+setup, and personal 2-of-3 live there.
+
+It is not the travel book or the physical-security
+book. One sentence each, then go read those:
+
+Do not travel with seed material. A threshold must
+still hold if one signer is coerced.
+
+\section{The job}
+
+If you only remember one line from this chapter:
+
+You are not confirming a hash. You are authorizing
+an on-chain effect.

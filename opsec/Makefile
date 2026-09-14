@@ -49,7 +49,7 @@ package: verify
 	mkdir -p output
 	zip -FSqr output/opsec-while-traveling-latex-source.zip \
 		book.tex style.tex Makefile README.md LICENSE.md Containerfile .dockerignore \
-		assets config container editorial scripts generated tests \
+		assets config container editorial scripts generated tests common \
 		-x '*/__pycache__/*'
 
 container:
