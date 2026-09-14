@@ -1,4 +1,4 @@
-name: Build physical security pocket guide
+name: Build pocket guides
 
 on:
   workflow_dispatch:
@@ -6,31 +6,44 @@ on:
     branches: [main]
     paths:
       - "physical/**"
+      - "opsec/**"
       - ".github/workflows/build.yml"
   pull_request:
     paths:
       - "physical/**"
+      - "opsec/**"
       - ".github/workflows/build.yml"
 
 permissions:
   contents: read
 
 jobs:
-  build:
+  physical:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-
       - name: Test anonymous container wrapper
         run: python3 -m unittest discover -s physical/tests -v
-
       - name: Build and verify in the container
-        run: |
-          CONTAINER_ENGINE=docker ./physical/container/build.sh
-
+        run: CONTAINER_ENGINE=docker ./physical/container/build.sh
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: physical-security-pocket-guide
           path: |
             physical/output/pdf/physical-security-pocket-guide.pdf
             physical/output/physical-security-pocket-guide-latex-source.zip
+
+  opsec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Test anonymous container wrapper
+        run: python3 -m unittest discover -s opsec/tests -v
+      - name: Build and verify in the container
+        run: CONTAINER_ENGINE=docker ./opsec/container/build.sh
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: opsec-while-traveling
+          path: |
+            opsec/output/pdf/opsec-while-traveling.pdf
+            opsec/output/opsec-while-traveling-latex-source.zip

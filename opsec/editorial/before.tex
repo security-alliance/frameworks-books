@@ -1,0 +1,297 @@
+\chapter{Before traveling}
+
+In this section you can expect all the things you should
+do before you depart. This includes hardening some devices
+and making sure you have a backup of the data you'll be
+traveling with. It also covers letting someone know you'll
+be calling in case of an emergency and how to identify
+you.
+
+If you're already reading this while traveling, don't
+worry, this will still be helpful, it just might be a bit
+more challenging depending on your context.
+
+To start, you can remove or securely store any data,
+devices, printed files, and documents you don't absolutely
+need on the trip. The less sensitive information and fewer
+critical assets you carry, the lower the risk and impact
+if loss, theft, or inspection occurs. Minimize your
+digital and physical footprint by leaving backups and
+originals securely at home or in trusted locations, and
+encrypt what must travel with you.
+
+This principle applies to laptops, phones, hardware
+wallets, paper backups, and any portable storage media.
+
+\section{Perform a quick threat model}
+
+Take five minutes to map out your risks. Identify what
+assets you're carrying (laptops, phones, hardware wallets,
+seed phrases, account access), who might target your
+assets (thieves, cybercriminals, border agents, etc.).
+Lastly, identify how attacks might happen (device theft,
+tampering, malware, coercion). For each threat, plan a
+mitigation\footnote{\url{https://youtu.be/igNa7z4hwMQ?t=2465}}
+if you feel this threat is applicable to you. For example,
+if you're carrying a hardware wallet, a threat is
+pick-pocketing -- mitigation could be keeping it attached
+to yourself (just don't use Ledger's necklace visibly) and
+securing it with PIN/passphrase (no patterns, not repeated
+across devices).
+
+This exercise keeps security measures proportionate to
+your situation.
+
+\section{Secure devices with encryption \& updates}
+
+Enable full-disk encryption on all devices (laptops,
+phones, tablets) to protect data if lost or stolen. Most
+modern OSes have them installed, not always enabled by
+default (e.g.\ BitLocker for Windows, FileVault for
+MacOS, LUKS for Linux, or Android/iOS encryption -- just
+ensure a strong password/PIN is set).
+
+Use popular devices like iPhones and Pixels. Install the
+latest OS and app updates since these patch security
+vulnerabilities.\footnote{A recent attack named Pixnapping
+has been uncovered, affecting many Android devices,
+particularly Pixels -- \url{https://www.pixnapping.com}}
+Latest is not always safest, but security patches usually
+win that trade-off. You can also consider to install --
+only trustworthy -- mobile security
+applications,\footnote{On iOS, due to sandboxing, apps
+can't scan the entire OS for malware, so many security
+apps focus on VPN, phishing web protection, breach
+alerts, etc.} which try to add a layer of control and also
+remind you of important security updates.
+
+If you must bring high-risk confidential data, consider
+encrypting those files individually using tools like
+VeraCrypt, FileVault, BitLocker, LUKS/dm-crypt, or others.
+
+\section{Back up and prepare for loss}
+
+Back up your devices before travel (and ensure cloud
+backups like iCloud/Google are up to date). This way, if a
+device is lost or confiscated, you won't lose important
+information.
+
+Record device details (make, model, serial numbers, IMEI
+for phones) and keep that list separate -- it will help in
+filing reports or remote-wipe commands.
+
+If your company uses Mobile Device Management (MDM) on
+phones or laptops, verify the device is enrolled and you
+know how to trigger a remote wipe or ``lost mode.'' Test
+``Find My'' or equivalent device-finding services so you
+can use them if needed. Pack chargers and cables so you
+won't need to borrow unknown ones (which could be
+malicious).
+
+\section{Protect Accounts with 2FA redundancy}
+
+Plan for how you'll access accounts that use two-factor
+authentication if your main device is unavailable. For
+authenticator apps (TOTP codes), export backup codes for
+your important accounts and keep them securely in services
+like 1Password or NordPass (you can check
+passwordmanager.com for more information on which one to
+pick).
+
+Alternatively, consider storing them elsewhere
+physically.\footnote{You can write them on paper and keep
+them in a safe, or store them on an encrypted drive.} If
+your 2FA is tied to a phone number (SMS or voice), disable
+SMS for 2FA. For technologies that are unfortunately
+dependent on phone numbers, use a separate line (not your
+personal one) from services like Google Voice, Burner App
+or SLYFONE. Transfer your number to an eSIM since they are
+harder to physically steal or swap than a physical
+SIM.\footnote{\url{https://support.apple.com/en-ca/118227}}
+
+Ensure your password manager is accessible -- many like
+1Password have a Travel Mode that removes sensitive vaults
+from your device while you travel (you can restore them
+later). This limits exposure if your device is searched or
+seized.\footnote{\url{https://www.schneier.com/blog/archives/2025/04/cell-phone-opsec-for-border-crossings.html}}
+
+You can also register a backup or alternative 2FA method,
+like a secondary phone (the device) or a PIN-protected
+hardware key to be used as a passkey. Be responsible with
+the use of software passkeys, particularly in situations
+where you are using a password manager to store both your
+passwords and passkeys, as this creates a single point of
+failure.
+
+\section{Secure your wallets and keys}
+
+\subsection{Hardware wallets (e.g.\ Ledger, Trezor)}
+
+Update the firmware and test the device before you leave,
+don't do this while traveling. Do NOT bring any written
+seed phrases under any circumstance -- seed backups are
+unencrypted keys that are far easier to steal or copy than
+a hardware device. Leave seed backups in a secure place,
+travel only with your hardware wallet if necessary. Enable
+all security features on the device (set a strong PIN, and
+use a BIP39 passphrase for example, if supported) so that
+even if the device is stolen, the amount of information
+required to access your crypto is high. Carry hardware
+wallets and security keys in your carry-on or under your
+sight, not in checked luggage, to avoid loss or tampering.
+
+\subsection{Yubikeys and 2FA tokens}
+
+Bring them to protect logins and make sure they're enabled
+on your critical accounts. Keep them on your person or in
+a separate bag from your laptop/phone so that a thief or
+snoop can't easily steal both at once. If you have a spare
+hardware wallet or Yubikey, you might leave one at home as
+a backup in case the one you carry is lost. Add, when
+possible, an extra layer of security to the token, such as
+a PIN code.
+
+\section{Lock down phones}
+
+On your smartphone, take advantage of security settings
+before you travel. Set a strong passcode (not just a
+4-digit PIN or pattern). Consider disabling Touch ID/Face
+ID if you might face situations where someone could
+force-unlock your device using your biometrics -- in many
+jurisdictions, authorities can compel a fingerprint or
+face scan more easily than a memorized
+password.\footnote{\url{https://www.schneier.com/blog/archives/2025/04/cell-phone-opsec-for-border-crossings.html}}
+At a minimum, know how to quickly and temporarily disable
+biometrics;\footnote{\url{https://news.ycombinator.com/item?id=43630624}}
+for example, on an iPhone, holding the side button and a
+volume button will trigger an emergency mode that requires
+the passcode to
+unlock.\footnote{\url{https://www.themacguys.com/essential-travel-security-tips-for-apple-devices}}
+On Android, use Lockdown mode if available (which only
+temporarily disables biometrics and is different from iOS
+Lockdown Mode).
+
+If you have an iPhone, enable Lockdown Mode (extreme
+protection on iOS) even if you are not at high risk or
+traveling to a high-threat region -- but be aware it
+restricts many
+features,\footnote{\url{https://support.apple.com/en-gb/105120}}
+though totally worth it.
+
+Disabling or restricting USB debugging on Android and
+using iOS USB restricted mode helps prevent unauthorized
+physical USB access and reduces risks from malicious
+cables or compromised charging stations.
+
+If your phone is managed by work (MDM), inform your IT
+team of your travel so they can assist with any
+location-based security policies and ensure you have the
+latest security profile. Finally, consider using a
+dedicated eSIM/local SIM for travel data. This can protect
+your primary phone number (you can keep your main line on
+eSIM and turn it off, while using a local data eSIM for
+mobile internet) and avoids physical SIM issues.
+
+\subsection{Configure additional phone protections}
+
+On iOS devices, disable Control Center and Notification
+Center access from the lock screen (Settings $>$ Face ID
+\& Passcode) to prevent thieves from seeing notifications
+or enabling Airplane Mode without unlocking. Disable USB
+accessory connections when locked to prevent unauthorized
+connections. For device recovery, ensure Find My iPhone is
+enabled with ``Send Last Location'' and ``Find Network''
+options activated so tracking continues even if the device
+is powered off.
+
+On Android, similar protections can be configured: disable
+notifications on lock screen (Settings $>$ Notifications
+$>$ On lock screen $>$ Don't show notifications), and
+enable ``Find My Device'' with all location services.
+
+\subsection{PIN security}
+
+Many financial apps default to PIN verification instead of
+biometrics, which means a thief who has your phone and
+knows your PIN could potentially access your financial
+accounts even if they can't bypass Face ID/Touch ID. Use
+unique PINs for banking apps that differ from your device
+PIN, or where possible, configure these apps to require
+biometric verification for every login.
+
+\section{Minimize digital \& social media footprint}
+
+It's not just cyber threats -- operational security
+matters. Avoid announcing your travel plans publicly on
+social
+media\footnote{\url{https://blackcloak.io/social-media-and-travel-be-careful-of-what-you-share/}}
+and be careful with real-time updates. Posts about being
+away from home can signal to criminals that you (and
+possibly valuable devices or even your house) are
+vulnerable. Consider sharing trip photos and crypto
+conference highlights after you return or only with
+trusted contacts. If you post at all, delay the location
+by a day or two. Ensure your social media privacy settings
+are tightened so strangers can't see your travel posts.
+
+When registering for events, use privacy-focused tools
+like iOS's Hide My Email or create burner emails through
+providers like Tuta. ProtonMail has had some controversy
+lately, but could still be a good alternative. If you
+don't need to keep the inbox at all, just create a throw
+away email account, there are plenty of options out there.
+
+Avoid giving out personal details unnecessarily during
+registration -- use minimal, generic info to reduce your
+digital footprint.
+
+Discretion is key: if possible, don't advertise that you
+work in crypto\footnote{\url{https://www.unchained.com/blog/7-tips-traveling-bitcoin}}
+or carry cryptocurrency. For example, remove or cover any
+crypto stickers on laptops or bags, and avoid wearing
+company swag or Bitcoin/Ethereum logos while in transit.
+These can be neon signs attracting thieves or unwanted
+attention (``I have valuable data or wallets!''). If asked
+about your work or luggage by curious strangers, have a
+cover story (e.g.\ ``I work in finance/IT'') rather than
+``I manage a crypto fund''. High-profile team members
+might travel under pseudonyms or at least not list their
+company on luggage tags to stay low-profile. Also, be wary
+that you might be traveling with someone with these
+characteristics, so don't give them away.
+
+\section{Plan emergency and incident responses}
+
+Before departure, know what you'll do if something goes
+wrong. Have a fallback plan in case of device loss: who
+will you notify \& how (have safe words and beware of
+deepfakes or impersonations); how will you revoke access
+to sensitive accounts; and how will you continue working
+(e.g., a backup laptop or a colleague who can step in).
+
+If traveling to countries with strict
+tech\footnote{\url{https://www.perplexity.ai/search/countries-that-list-cryptopgra-bBSItefPSUi7HP2lTNekjA}}
+or encryption
+laws\footnote{\url{https://it.cornell.edu/security-and-policy/travel-internationally-technology}}
+(e.g., China, Russia, UAE), devices like VPNs, encrypted
+messaging apps (Signal, or Telegram with Secret Chats
+only), hardware wallets (Ledger, Trezor), Yubikeys, or
+encryption software (VeraCrypt, BitLocker) may be flagged
+by border authorities. Research local laws beforehand.
+Consider carrying a travel letter from your organization
+explaining the professional need for these tools, or use
+sanitized loaner devices to avoid issues at border
+controls.
+
+Share your itinerary and contact information with a
+trusted peer so they can assist or monitor for any issues.
+
+Finally, schedule critical work (especially high-value
+transactions) for before or after your trip if possible,
+so you're not forced to do ultra-sensitive actions on the
+road. Criminals usually play with the ``time-sensitive
+factor,'' trying to trick you into doing something quick
+and urgent, by committing something reckless.
+
+There's more information for high profile individuals in
+the last chapter, page~\pageref{ch:high-profile}.

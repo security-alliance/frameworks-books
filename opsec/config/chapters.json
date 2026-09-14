@@ -1,0 +1,14 @@
+{
+  "parts": [
+    {
+      "number": "01",
+      "title": "TRAVEL",
+      "tagline": "Prepare before, stay sharp on the road, inspect on return.",
+      "chapters": [
+        "docs/pages/opsec/travel/overview.mdx",
+        "docs/pages/opsec/travel/guide.mdx",
+        "docs/pages/opsec/travel/tldr.mdx"
+      ]
+    }
+  ]
+}

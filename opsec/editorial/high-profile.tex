@@ -1,0 +1,195 @@
+\chapter{Additional info for high-profile individuals}
+\label{ch:high-profile}
+
+If you are a high-profile target, you'll evidently realize
+that some of these initial suggestions fall short within
+your threat model. This section provides additional
+recommendations for profiles like yours.
+
+Web3 professionals who have elevated privileges or
+profiles -- for example, access to multisig treasury keys,
+leadership roles, or possession of sensitive
+organizational secrets are high-profile targets. These
+users may be targeted more deliberately by criminals or
+even nation-states. In addition to all the precautions
+above, high-risk travelers should take further steps.
+
+For high-profile or recognizable individuals, keeping a
+low profile is essential. Beyond avoiding branded
+merchandise, a simple yet effective tactic is wearing an
+N95 mask or similar face covering. It's socially accepted,
+draws no attention, and helps protect your identity --
+making it harder for adversaries to target or track you
+during public events.
+
+\section{Use loaner or ``burner'' devices}
+
+If feasible, travel with clean devices that don't contain
+sensitive data. Leave your primary laptop/phone at a
+protected location (assuming you also have security in
+place as well), and bring a wiped, minimal laptop or a
+cheap travel phone with only the basics. Log into what you
+absolutely need (through secure channels) and nothing
+more. Treat these devices as expendable -- assume they
+will be compromised and plan to wipe them afterward. For
+example, a senior developer might bring a laptop with no
+source code on it and use a VPN or VDI (virtual desktop)
+to access company systems when necessary, leaving no data
+on the local disk. A hardware wallet keyholder might carry
+a secondary hardware wallet with lower privileges (or a
+single key to a multisig instead of full access).
+
+Keep your primary keys secured in a location that is not
+accompanying you. Remember, a nearly empty device can
+raise suspicion at some borders, so don't make it obvious
+-- load some innocuous data (music, generic files) so it
+looks used, but nothing that would be harmful if
+inspected.
+
+\section{Plan for customs and border checks}
+
+High-risk individuals may face increased scrutiny or
+device searches at borders due to the sensitive nature of
+their data or their roles (e.g., journalists). Before
+crossing borders, purge beyond recovery or secure
+sensitive information. Turn off devices before landing.
+Some experts even recommend encrypting and then powering
+down devices -- a powered-off device with strong
+encryption is extremely hard to
+access.\footnote{\url{https://www.reddit.com/r/technology/comments/1jl9dxg/how_to_lock_down_your_phone_if_youre_traveling_to}}
+
+Disable cloud auto-sync of sensitive data; you don't want
+customs inadvertently accessing company cloud drives if
+they inspect your laptop. If asked to unlock devices,
+having them powered off gives you an opportunity to state
+that it's encrypted and requires a passphrase (which you
+should have memorized, not written down).
+
+It's wise for high-risk travelers to disable biometrics
+entirely before travel -- use PIN/password only, as
+mentioned -- so you cannot be compelled or tricked via
+fingerprint/face.
+
+Know your legal rights in the countries you transit; in
+some places you can refuse to unlock (though it may mean
+the device is held or you are denied entry), while in
+others you might face penalties. This is a personal risk
+decision -- but the best case is to carry nothing truly
+incriminating or irreplaceable across a checkpoint.
+
+For ultra-sensitive data, use secure communication
+channels to retrieve it at destination rather than
+carrying it. For instance, an executive could store
+confidential files in a secure cloud drive they access
+over VPN once abroad, rather than carrying them on a
+laptop.
+
+Border/immigration checks often require you to share your
+travel plans, including hotel information and airline
+details. Having a physical copy of them (printouts,
+ingress-egress) means you do not need to access your
+devices in front of agents or potential cameras while
+being scrutinized. This will also prevent the need to let
+them peek at them to provide information, thereby risking
+the disclosure of sensitive personal information.
+
+Since COVID, many nations have moved to digital
+immigration paperwork. This often requires the use of an
+email address. You should consider a dedicated email
+address for interaction with government agencies, instead
+of an email address that might have a public/open-source
+affiliation with cryptocurrency (or other sensitive
+topics).
+
+\section{Enhanced device protections}
+
+High-risk users should layer additional defenses. Lockdown
+Mode (on iOS) or Android's equivalent secure modes should
+be enabled if there's any chance of targeted spyware
+(these modes disable exploit-prone services and
+attachments). Use messaging apps with end-to-end
+encryption and disappearing messages (NOT Telegram, Signal
+is a good example) for any sensitive communications --
+assume that standard SMS or emails could be monitored.
+
+Consider using a Faraday bag for phones when not in use,
+if you suspect active tracking or exploitation (this
+prevents any signals in or out, though use sparingly as it
+also blocks your calls).
+
+If you leave a device in your hotel, you can put it in a
+tamper-evident bag and seal it, or at least take measures
+like noting the exact placement or taking a photo, so you
+can detect if it was accessed.
+
+Some high-risk individuals even weigh their devices before
+and after travel to detect the addition of hardware
+implants (a change in weight could indicate something like
+a chip added) -- this is an extreme step, but shows the
+level of caution possible. At the very least, physically
+inspect your devices for new scratches, screws that look
+tampered with, or unexpected behavior.
+
+\section{Secure crypto keys with multi-party control}
+
+If you have access to significant crypto funds (exchanges,
+DAO treasury, etc.), implement policies that prevent a
+single point of failure while you're traveling. For
+example, if you're one of M-of-N multisig signers,
+consider temporarily requiring an extra signer for
+transactions while you're away (so if normally 2-of-3 can
+move funds, bump it to 3-of-3 or add a 4th backup signer)
+so that a compromised key or coerced action cannot alone
+execute a transfer.
+
+If you hold hardware keys, keep them geographically split
+-- e.g.\ bring one key device with you, leave the backup
+key in a safe place at home, and perhaps give a third key
+to a colleague, so that even a forced disclosure cannot
+result in an immediate loss of funds without
+collaboration. Use duress codes if your hardware supports
+it (some wallets allow a secondary PIN that opens a decoy
+account with minimal funds, the same can also be made with
+encryption volumes).
+
+In general, assume a determined adversary could target you
+specifically for your role: use confidential communication
+to stay in touch with your team (so they know you're safe
+daily), and establish a code word or protocol for
+emergencies.
+
+High-risk travelers might also arrange a ``check-in''
+schedule with their security team or colleagues -- if you
+don't check in by a certain time, they can take pre-agreed
+actions (like disabling your accounts or alerting
+authorities). This kind of planning is an extra safety net
+when the stakes are especially high.
+
+\section{Post-trip device rebuilding}
+
+For highly targeted individuals, the safest course after
+returning is to treat every device as compromised and
+rebuild it, especially before reaching your safe zone
+(home, work office). This involves wiping devices to
+factory settings, flashing firmware if necessary, and
+restoring data from known-good backups made before the
+trip.
+
+Consider using read-only operating systems or booting from
+trusted live media during travel to reduce risk exposure.
+Before your trip, you can create a cloned disk image of a
+clean system state, so after traveling you can restore
+your device to that exact low-level copy -- starting fresh
+with a known secure baseline. This approach helps
+eliminate stealthy malware or spyware that may have been
+implanted.
+
+Additionally, review system logs if available (security
+apps or MDM solutions often report unusual access or
+configuration changes during your absence).
+
+As always, report any suspicious incidents promptly.
+High-risk roles may require a debrief with your security
+officer -- be transparent about any odd encounters or
+possible security lapses to mitigate threats that could
+have followed you home.

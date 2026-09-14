@@ -8,15 +8,15 @@ Trim size is 70 x 110 mm, matching the printed travel OpSec mini-book.
 | Directory | Title |
 | --- | --- |
 | [`physical/`](physical/) | Physical Security pocket guide |
+| [`opsec/`](opsec/) | OpSec While Traveling |
 
-Travel OpSec will live in `opsec/` once the LaTeX edition is in.
 
 ## Build
 
 Each book directory is self-contained. Podman or Docker is enough:
 
 ```sh
-cd physical
+cd physical   # or: cd opsec
 ./container/build.sh
 ```
 

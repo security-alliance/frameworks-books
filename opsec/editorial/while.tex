@@ -1,0 +1,271 @@
+\chapter{While traveling}
+
+In this section we're going to cover all the things you
+have to pay attention to or take care of while on the
+move. Is it necessary to connect to that conference's
+Wi-Fi? Have you checked if there is a camera that might be
+recording your keystrokes? Leaving your computer
+unattended or just running whatever software your
+hackathon teammate asks you to download in order for your
+promising project to win might not be the best idea, it
+could result in compromise.
+
+\section{Network safety}
+
+Treat every network as potentially hostile. Whenever
+possible, use a cellular connection or a personal hotspot
+instead of public Wi-Fi -- your mobile data is encrypted
+and safer than an open café or hotel network. If you must
+use public Wi-Fi (hotel, airport, conference), verify the
+network name with staff and disable auto-connect
+features\footnote{\url{https://www.cisa.gov/sites/default/files/publications/Cybersecurity\%20While\%20Traveling.pdf}}
+so your devices don't join networks without prompting you.
+
+Turn off Wi-Fi and Bluetooth on your phone and laptop when
+you're not using them; this reduces the risk of
+unsolicited connections or Bluetooth-based attacks. Also,
+disable any device-to-device sharing like AirDrop or
+Nearby Share to prevent strangers from sending you
+files.\footnote{\url{https://www.cypherock.com/blogs/post-safe-vacation-tips-while-traveling-with-crypto}}
+
+Use a trustworthy VPN for an extra layer of encryption for
+your internet traffic, although in most cases by using an
+updated device, safe hardcoded DNS records, and ensuring
+SSL while browsing (enforce HTTPS-only-modes or adding
+``http://*'' to your uBlock list) might be enough. A
+reputable, non-logging VPN (or your company's VPN) helps
+protect against snooping on public networks, especially if
+you're handling highly sensitive work and using several
+communication channels.
+
+Using a personal portable router combined with a trusted
+VPN adds a strong layer of security when connecting to
+public Wi-Fi networks. This setup creates a private,
+encrypted tunnel between your devices and the internet,
+minimizing exposure to malicious actors on shared
+networks. Whenever possible, prefer mobile data over
+Wi-Fi, as cellular networks provide better encryption and
+isolation by default. If you must use Wi-Fi, disable
+automatic connections and ensure you connect only to
+verified, trusted networks to reduce risk.
+
+\section{Device handling}
+
+Keep them close and protected. Never leave your devices
+(laptops, phones, hardware wallets) unattended or unlocked
+in public. Keep them on your person or within sight
+whenever possible. In a conference or cafe, use a cable
+lock for your laptop if you must step away briefly, take
+it with you or get someone you trust to watch it over for
+you.
+
+In hotels/Airbnbs, use the room safe for small devices
+when you're out. These safes can easily be opened by an
+experienced thief or rogue/malicious staff. Consider a
+portable travel safe/bag you can lock to a fixed object.
+
+A portable door
+lock\footnote{\url{https://www.travelandleisure.com/sabre-portable-door-lock-review-7643179}}
+or door jammer for your room can add an extra barrier
+against intruders (useful in rentals without chain locks).
+This simple gadget prevents anyone (even with a key) from
+opening your door while you're inside. When out and about,
+be mindful of pickpockets -- use bags that zip and
+consider a subtle anti-theft backpack for expensive
+gadgets or important assets.
+
+For hardware wallets or Yubikeys, a good practice is to
+separate them from the device they authenticate: e.g.\
+don't carry your Yubikey on the same keychain as your
+laptop bag key; keep it hidden on you. And, of course,
+keep devices powered off or locked when not in use --
+enable short auto-lock
+timeouts\footnote{\url{https://www.cisa.gov/sites/default/files/publications/Cybersecurity\%20While\%20Traveling.pdf}}
+on your phone/laptop so they aren't unlocked if snatched.
+You can also do this before leaving as well.
+
+\section{Beware of unknown USB charging}
+
+Avoid plug-and-play charging stations at airports or
+malls. The risk of ``juice
+jacking'',\footnote{\url{https://www.cypherock.com/blogs/post-safe-vacation-tips-while-traveling-with-crypto}}
+although small, is that a malicious charging kiosk or
+cable can inject malware or siphon data when you connect
+via USB. Depending on your profile risk, you might
+encounter technologies that mimic different kind of cables
+and accessories with the same purpose. These exist out of
+the box, and have been widely used by red-teamers and
+pentesters (re OMG cable).
+
+Stick to using your own charger plugged into a power
+outlet, or use a USB data blocker (a little adapter that
+only passes power, not data). Similarly, do not plug
+unknown USB drives into your laptop -- if someone hands
+you a free USB stick at an event, assume it could be a
+trap.
+
+USBGuard\footnote{\url{https://github.com/USBGuard/usbguard}}
+software (for Linux) or equivalent can be used to restrict
+USB device access on your computer, allowing only
+whitelisted devices. This tool can prevent an unknown USB
+from automatically tampering with your system by requiring
+authorization for new devices. At a minimum, disable any
+``USB autorun'' features and consider locking down ports
+if your OS allows.
+
+\section{Screen privacy and social engineering}
+
+Practice situational awareness when working in public
+spaces. Shoulder
+surfing\footnote{\url{https://www.trio.so/blog/shoulder-surfing-in-computer-security}}
+is a real threat -- someone nearby could be watching you
+enter passwords or PIN codes.
+
+Use a privacy screen filter on your laptop or phone to
+narrow the viewing angle. This makes it much harder for
+anyone not directly in front of your screen to read it.
+Sit with your back to a wall when possible, and shield the
+keypad with your body or hand when typing sensitive info.
+
+In crowded conferences or airports, be cautious if someone
+you don't know strikes up conversation -- might be trying
+to distract you or talk about crypto; scammers might
+engage you to glean info or even attempt to get you to
+unlock your device. Don't log in to critical accounts in
+front of others -- you never know who's looking.
+
+Also be mindful of phishing attempts: traveling users are
+prime targets for fake ``urgent'' emails or messages.
+Double-check any unusual prompts before entering
+credentials, especially if you're on untrusted
+Wi-Fi\footnote{\url{https://www.cisa.gov/sites/default/files/publications/Cybersecurity\%20While\%20Traveling.pdf}}
+(use your VPN and look for HTTPS).
+
+\section{Maintain OpSec in public}
+
+While traveling, blend in and stay discreet. Refrain from
+discussing sensitive matters in public areas where
+eavesdropping is possible, or directly sharing things like
+where you are staying to people you don't know. Even hotel
+lobbies or ride-shares might not be secure for private
+discussions.
+
+When meeting people, don't give your phone to others to
+type down their socials, and remember to disable default
+options like Telegram's sharing phone number when adding a
+contact.
+
+Remember that hidden cameras or microphones could exist in
+unfamiliar environments. It's rare but not unheard of,
+especially in Airbnbs or rented
+spaces\footnote{\url{https://www.washingtonpost.com/travel/2024/05/22/hidden-cameras-airnbnb-rental-properties}}
+-- malicious hosts have hidden cameras in items like smoke
+detectors, clock radios, or USB chargers. Give your
+accommodations a scan: look for odd or extra devices
+plugged in (especially facing beds or desks) and cover or
+unplug them if suspicious. You can also play ambient noise
+(or use a noise generator app) during confidential
+conversations to thwart any listening devices.
+
+\subsection{Keep a low profile}
+
+As mentioned, don't flaunt crypto wealth or
+gear.\footnote{\url{https://www.unchained.com/blog/7-tips-traveling-bitcoin}}
+For example, if attending a blockchain conference,
+consider using an alias on your name badge that doesn't
+explicitly say your company or title, and don't display
+that badge outside the venue. When moving around, secure
+your laptop in a nondescript sleeve or bag (instead of one
+with a well-known conference brand). The goal is to avoid
+drawing the attention of both petty thieves and more
+organized attackers by limiting the signals that you're a
+high-value crypto target.
+
+Don't rely on security through obscurity. Going
+``stealth'' doesn't make you immune to attacks. The
+suggestions in this section are meant to complement, not
+replace, the other security measures.
+
+\section{Traveling with high-value crypto or duties}
+
+If you must make crypto transactions or access sensitive
+systems while on the road, do so with caution. Use trusted
+hardware and networks: e.g.\ if you need to send a
+transaction, use your hardware wallet on your own laptop
+(never a shared computer), on a secured connection.
+
+Be aware of surveillance at events -- attackers have been
+known to watch for people handling sensitive info. If you
+need to access a seed or enter a recovery phrase, do it in
+a private, secure setting (never over public Wi-Fi or in
+view of anyone, including cameras).
+
+Consider that everyone knows you own crypto at a crypto
+event,\footnote{\url{https://www.unchained.com/blog/7-tips-traveling-bitcoin}}
+so your threat profile is elevated. Adjust your security:
+for instance, enable a passphrase or a pin on any
+single-signature wallet you carry so that even if someone
+obtains your hardware wallet, they can't access funds
+without that passphrase. For large amounts, rely on
+multi-sigs, verifying payloads before signing -- you might
+carry one key on you and leave another key(s) with trusted
+parties so no single person has all signing power while
+traveling. In short, treat any on-trip crypto operations
+with more care than you would in the office or at home.
+
+\section{While presenting / doing public appearances}
+
+One often overlooked risk is the exposure caused by
+presenting or hosting technical workshops in public.
+Without properly hardening or isolating your computer
+before setting up, you may unintentionally expose network
+services to hostile environments or reveal sensitive
+information on-screen. Always prepare a clean, minimal
+environment and verify no confidential data or open ports
+are accessible before connecting to unfamiliar networks or
+projecting your screen.
+
+\section{Physical safety and common sense}
+
+Operational security also has a physical aspect. Trust
+your instincts and normal travel safety rules: stick to
+well-lit and populated areas if carrying devices at night,
+don't let strangers ``shoulder surf'' your ATM or credit
+card PIN (check for skimmers, fake interfaces), and keep
+your travel documents secure since identity theft can be
+as damaging as device theft.
+
+When possible, store your devices in secure lockers (many
+hotels or conferences offer charging lockers). Never leave
+them in open areas.
+
+Beware of the classic ``evil maid'' scenario in hotels
+(where someone might tamper with your laptop in your
+room): using tamper-evident tape or seals on your laptop
+case can help detect this, though it's mostly a concern
+for high-risk targets. If you have tamper-evident stickers
+or tamper-evident bags, you can seal your device in them
+overnight -- any attempt to open or remove the device will
+leave a visible trace. While not foolproof against a
+determined adversary, it raises the bar and can deter
+casual snooping.
+
+Petty thieves may look beyond obvious valuables. Simply
+locking items in a dorm safe or hiding them at home might
+deter casual theft, but savvy criminals often search
+inside books, behind electrical outlets, or within
+patterns on walls or furniture to find hidden stashes.
+Consider unconventional hiding spots and avoid predictable
+storage methods. Layer your physical security measures
+with tamper-evident seals or discreet decoy containers to
+raise the effort required for unauthorized access.
+
+Above all, maintain an alert posture: be aware of who's
+around when you're working, and if something feels off
+(like someone persistently hovering or a device acting
+strangely), don't ignore it. You can always relocate,
+power down your device, or otherwise cut off exposure at
+the first sign of potential trouble.
+
+There's more information for high profile individuals in
+the last chapter, page~\pageref{ch:high-profile}.
