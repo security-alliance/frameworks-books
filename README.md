@@ -12,13 +12,14 @@ Look there before changing type, trim, or the night cover.
 | [`physical/`](physical/) | Physical Security pocket guide |
 | [`opsec/`](opsec/) | OpSec While Traveling |
 | [`multisig/`](multisig/) | Protocol Multisig |
+| [`wallet/`](wallet/) | Wallet Security pocket guide |
 
 ## Build
 
 Each book directory is self-contained. Podman or Docker is enough:
 
 ```sh
-cd physical   # or: cd opsec  /  cd multisig
+cd physical   # or: cd opsec  /  cd multisig  /  cd wallet
 ./container/build.sh
 ```
 

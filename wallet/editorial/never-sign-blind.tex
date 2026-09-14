@@ -1,0 +1,53 @@
+\chapter{Never sign blind}
+
+Never sign blindly. Prefer the hardware wallet screen
+and independently checked calldata over any web UI.
+A compromised front end can look perfect and still feed
+you a drain.
+
+The key is not stolen. You handed the spend over.
+
+\section{Ground truth}
+
+The laptop lies. The phone lies. The dApp lies. The
+simulation can lie. The trusted display on the hardware
+wallet is what you are authorizing. If that screen and
+the website disagree, reject.
+
+Demand clear signing. If the wallet wants a blind hash,
+you are accepting a lot of risk. Sometimes a contract
+forces it. Then the question is whether this interaction
+is worth that.
+
+\section{Simulate, then doubt it}
+
+Run a simulator on anything that is not a boring
+transfer you already understand. Read the predicted
+balance changes. Then remember a simulation can show one
+thing and execute another. It is a filter, not a
+blessing.
+
+\section{Four checks on an EOA}
+
+\begin{enumerate}
+  \item \textbf{Origin.} The URL. Clones are cheap.
+  \item \textbf{Contract.} The ``interacting with''
+  address, from official docs or a labeled explorer
+  page, not from chat.
+  \item \textbf{Function and parameters.} The name, the
+  \texttt{to} / \texttt{recipient} / \texttt{onBehalfOf}
+  field, the decimals.
+  \item \textbf{Fee.} A simple transfer with a huge gas
+  bill is a smell.
+\end{enumerate}
+
+\section{Practice when it is free}
+
+Wise Signer and similar drills exist so the first time
+you read calldata is not with rent money on the screen.
+Use them.
+
+The detailed Safe and Squads verification flows are in
+the Protocol Multisig companion and on the site. The
+rule does not change there: hash, simulate, decode, then
+sign. Last signer executes only after that.

@@ -8,6 +8,7 @@ on:
       - "physical/**"
       - "opsec/**"
       - "multisig/**"
+      - "wallet/**"
       - "common/**"
       - ".github/workflows/build.yml"
   pull_request:
@@ -15,6 +16,7 @@ on:
       - "physical/**"
       - "opsec/**"
       - "multisig/**"
+      - "wallet/**"
       - "common/**"
       - ".github/workflows/build.yml"
 
@@ -66,3 +68,18 @@ jobs:
           path: |
             multisig/output/pdf/protocol-multisig.pdf
             multisig/output/protocol-multisig-latex-source.zip
+
+  wallet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - name: Test anonymous container wrapper
+        run: python3 -m unittest discover -s wallet/tests -v
+      - name: Build and verify in the container
+        run: CONTAINER_ENGINE=docker ./wallet/container/build.sh
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: wallet-security-pocket-guide
+          path: |
+            wallet/output/pdf/wallet-security-pocket-guide.pdf
+            wallet/output/wallet-security-pocket-guide-latex-source.zip

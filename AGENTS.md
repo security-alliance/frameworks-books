@@ -16,6 +16,7 @@ this checkout sits at `frameworks/books/`.
 | `physical/` | Physical Security pocket guide | Rewritten for print. Coercion & Duress only. Stubs stay off the page. |
 | `opsec/` | OpSec While Traveling | Follow the printed v1.0 companion. Update facts from live `opsec/travel` without changing the three-phase spine. |
 | `multisig/` | Protocol Multisig | Rewritten for print from `multisig-for-protocols`. Signer-first. Safe is the default stack. Spine: separate / delay / verify. |
+| `wallet/` | Wallet Security | Rewritten for print. Person who signs. Stubs and protocol-multisig runbooks stay off the page. |
 
 Start a new book by copying an existing book directory. Do not design a
 new cover or trim. Identity lives in that book's `style.tex`.

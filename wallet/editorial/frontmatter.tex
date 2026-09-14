@@ -1,0 +1,124 @@
+\chapter{About this book}
+
+This mini-book is a print adaptation of the Wallet
+Security framework from the \textbf{Security Frameworks},
+an initiative by the \textbf{Security Alliance}. The web
+pages were written for a site. This edition is rewritten
+for a pocket book you can hand to someone who is about
+to hold keys.
+
+The source this edition follows is the reviewed personal
+custody core: who holds keys, hot versus cold, hardware
+setup, seed handling, signing verification, and
+approvals. Software-wallet and hardware-wallet stub
+pages, the signing-schemes stub, and the tools catalog
+stay on the website. Empty chapters make a worse
+companion than a short one.
+
+Safe and Squads operator walkthroughs live in the
+Protocol Multisig companion. This book will not pretend
+to be that one.
+
+This print cut changes order, cuts website navigation,
+and turns the same controls into reading you can do on a
+train. It does not invent new controls to fill gaps.
+
+\section{Help us improve}
+
+The live framework moves. If a control here is wrong,
+incomplete, or now dangerous in your jurisdiction, fix it
+upstream so the site and the next printing match.
+
+{\ttfamily github.com/\\security-alliance/frameworks}
+
+\keepblock{%
+If you value this kind of resource, you can support the
+work at our website.
+
+{\centering\plainurl{securityalliance.org/donate}\par}
+}
+
+\keepblock{%
+\section{Human safety comes first}
+
+No asset, key, policy, or evidence goal is worth more
+harm. If someone is being coerced, put the wrench down
+and open the Physical Security companion. This book is
+for the key. That book is for the person.
+}
+
+\chapter{Introduction}
+
+Wallet security is control of keys and verification of
+every signature. Hardware and multisig fail if you sign
+attacker-controlled calldata because a website told you
+to.
+
+Cryptography protects keys from math. It does not
+protect you from a fake dApp, a poisoned address, a
+photo of a seed, or a hardware wallet that arrived
+already set up.
+
+This book is for people who will self-custody: beginners
+with a hot wallet, operators moving savings onto
+hardware, and anyone about to be the one person who can
+spend. It is not a protocol treasury runbook.
+
+Read it as a loop, not as a policy you recite once:
+
+\begin{enumerate}
+  \item Know who can spend, including the custodian you
+  thought you did not have.
+  \item Split spend from savings. Match value to
+  exposure.
+  \item Put the pile on hardware you bought and verified.
+  \item Keep the seed offline. Treat digital exposure as
+  full compromise.
+  \item Never sign blindly. The device screen is the
+  transaction.
+  \item Cap approvals. Ignore mystery tokens.
+  \item Add independent people before one key is
+  life-changing.
+\end{enumerate}
+
+\section{Disclaimer}
+
+This is not legal advice, and it is not a recovery
+service. It will not match every chain, family, or
+threat model. Some of the dollar figures, seed splits,
+and slippage ranges in later chapters are examples from
+the source, not defaults. Copying them blindly is how
+you get a setup an attacker can predict.
+
+A 3-piece seed split, a 25th word, or a custom
+encryption scheme can lock you out harder than it locks
+an attacker out. Design that kind of control with people
+who do this work. Do not invent it at 2am.
+
+The contents are free on the Security Frameworks site.
+Suggest changes there.
+
+\section{How this book is organized}
+
+\begin{enumerate}
+  \item \textbf{Who holds the keys.} Custody is who can
+  spend.
+  \item \textbf{Split the pile.} Hot for spend, cold for
+  savings.
+  \item \textbf{Hardware.} Buy direct, verify, sign on
+  the device.
+  \item \textbf{The seed.} Offline. Any leak is
+  compromise.
+  \item \textbf{Never sign blind.} Origin, address,
+  function, amount.
+  \item \textbf{Approvals.} Exact amounts, revoke,
+  permits are not logins.
+  \item \textbf{More than one key.} Independent signers,
+  or theater.
+  \item \textbf{New surfaces.} AA, 7702, TEEs. Power
+  with extra failure modes.
+  \item \textbf{If it breaks.} Move. Do not reuse.
+\end{enumerate}
+
+The last chapter is four short cards for the moment you
+do not want to reread a section.

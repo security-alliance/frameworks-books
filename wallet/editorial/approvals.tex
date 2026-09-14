@@ -1,0 +1,59 @@
+\chapter{Approvals}
+
+Most fund losses are interaction mistakes, not stolen
+seeds. You signed something that let a contract pull.
+The wallet was fine. The spend was not.
+
+\section{Exact amounts}
+
+\texttt{approve()} gives a spender permission to move a
+token. Most dApps ask for unlimited. Give the amount
+this transaction needs. Revoke the rest later with
+Revoke.cash or the explorer's approval checker. Do that
+on a schedule, not after a scare.
+
+\section{Permit is not a login}
+
+EIP-2612 \texttt{permit} is an off-chain approval. No
+on-chain tx appears until someone else submits it. A
+fake ``sign in'' prompt with \texttt{spender},
+\texttt{value}, \texttt{nonce}, and \texttt{deadline} is
+a permit. You are not logging in. You are loading the
+gun.
+
+\section{The usual traps}
+
+\textbf{Address poisoning.} A tiny transfer from an
+address that looks like yours, or like a recipient you
+use. Scam tokens in the history. Copy from an address
+book you maintain, not from ``recent.''
+
+\textbf{Clipboard malware.} It swaps the address you
+copied. Read the destination on the hardware screen,
+character by character, before you confirm.
+
+\textbf{Fake airdrops.} Unknown tokens in the wallet.
+Claiming or swapping them is how
+\texttt{setApprovalForAll} gets signed. Ignore them.
+
+\textbf{Ice phishing.} You sign a real \texttt{approve}
+to a spender you were talked into. The chain did what
+you asked. The social layer was the exploit.
+
+\section{Trades}
+
+Slippage of 5--10\% on a liquid pair is how you get
+sandwiched. Tiny slippage is how you burn gas on a
+fail. The source's 0.5--1\% band is an example for
+liquid pairs, not a law.
+
+Private relay routes (Flashbots Protect, MEV Blocker)
+hide the tx from public searchers. Set a deadline so a
+stuck tx cannot execute later at a worse price. If an
+aggregator hops through a token you did not pick, stop.
+
+\section{Before you click}
+
+Verify the contract. Simulate. Check the approval
+amount. Read the typed data. If you do not understand
+the message, do not sign it.

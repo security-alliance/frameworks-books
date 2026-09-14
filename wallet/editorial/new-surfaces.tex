@@ -1,0 +1,50 @@
+\chapter{New surfaces}
+
+New account types add recovery and policy. They also add
+code you can get wrong. None of this is the default for
+a first wallet.
+
+\section{Account abstraction}
+
+ERC-4337 makes the account a contract. Guardians,
+spending limits, batched calls, gas paid by someone
+else. The cost is that bugs in that contract, in the
+EntryPoint, in a paymaster, or in a guardian set can
+spend like a key.
+
+Threat-model the guardians the way you threat-model
+signers. Same city, same employer, same phish, and you
+built a committee that fails together. Use the canonical
+audited EntryPoint. Do not collect random modules.
+
+Key rotation without moving funds is the actual prize if
+the implementation is sound. Audits are not optional.
+
+\section{EIP-7702}
+
+7702 lets an EOA delegate to contract code. Batching and
+sponsored gas show up. So does a phishing line: ``upgrade
+your wallet.'' If you sign a SetCode to the wrong
+contract, they can drain you.
+
+Major wallets hardcode the only delegation target they
+will offer. Approve that in the wallet app. A website, an
+email, or a DM asking you to enable smart-account mode
+is a phish.
+
+A delegation with chain ID 0 can be replayed on other
+EVM chains. Revoke by delegating to the zero address.
+Delegation does not save you if the private key is
+already stolen.
+
+\section{TEEs and encumbered keys}
+
+Encumbered wallets put policy around a key, often inside
+a TEE. Useful if you need rules on a chain that cannot
+express them. Not automatic trustlessness. Hardware
+bugs, attestation lies, and operator compromise still
+exist. Researchers keep proving TEEs fail open. Start at
+TEE.fail before you bet a treasury on an enclave.
+
+If you need distributed control, independent human
+signers are still the boring answer.

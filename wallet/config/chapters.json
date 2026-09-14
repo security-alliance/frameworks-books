@@ -1,0 +1,74 @@
+{
+  "parts": [
+    {
+      "number": "01",
+      "title": "WHO HOLDS THE KEYS",
+      "tagline": "Custody is who can spend.",
+      "chapters": [
+        "docs/pages/wallet-security/overview.mdx",
+        "docs/pages/wallet-security/custodial-vs-non-custodial.mdx"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "SPLIT THE PILE",
+      "tagline": "Match value to online exposure.",
+      "chapters": [
+        "docs/pages/wallet-security/cold-vs-hot-wallet.mdx",
+        "docs/pages/wallet-security/for-beginners-and-small-balances.mdx",
+        "docs/pages/wallet-security/intermediates-and-medium-funds.mdx"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "HARDWARE",
+      "tagline": "Buy direct. Verify. Sign on the device.",
+      "chapters": [
+        "docs/pages/wallet-security/intermediates-and-medium-funds.mdx"
+      ]
+    },
+    {
+      "number": "04",
+      "title": "THE SEED",
+      "tagline": "Offline. Any digital exposure is compromise.",
+      "chapters": [
+        "docs/pages/wallet-security/seed-phrase-management.mdx"
+      ]
+    },
+    {
+      "number": "05",
+      "title": "NEVER SIGN BLIND",
+      "tagline": "The device screen beats the website.",
+      "chapters": [
+        "docs/pages/wallet-security/signing-and-verification/signing-verification.mdx",
+        "docs/pages/wallet-security/signing-and-verification/verifying-standard-transactions.mdx"
+      ]
+    },
+    {
+      "number": "06",
+      "title": "APPROVALS",
+      "tagline": "Most losses are signing mistakes.",
+      "chapters": [
+        "docs/pages/wallet-security/smart-contract-interaction-security.mdx"
+      ]
+    },
+    {
+      "number": "07",
+      "title": "MORE THAN ONE KEY",
+      "tagline": "Independent signers, or it is theater.",
+      "chapters": [
+        "docs/pages/wallet-security/secure-multisig-best-practices.mdx"
+      ]
+    },
+    {
+      "number": "08",
+      "title": "NEW SURFACES",
+      "tagline": "AA, 7702, and TEEs add power and failure modes.",
+      "chapters": [
+        "docs/pages/wallet-security/account-abstraction.mdx",
+        "docs/pages/wallet-security/signing-and-verification/verifying-7702.mdx",
+        "docs/pages/wallet-security/encumbered-wallets.mdx"
+      ]
+    }
+  ]
+}

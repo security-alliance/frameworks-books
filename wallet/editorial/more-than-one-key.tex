@@ -1,0 +1,59 @@
+\chapter{More than one key}
+
+One key is one person, one device, one bad day. A
+multisig raises the bar only when the signers, the
+devices, the places, and the verification habit are
+actually independent. A poorly run multisig is theater.
+
+This chapter is the personal and small-team version.
+Protocol treasuries, timelocks, pause guardians, and
+Safe operator steps live in the Protocol Multisig
+companion. Use that book when the wallet is an
+institution.
+
+\section{M of N}
+
+You need M signatures out of N keys. 2-of-3 and 3-of-5
+are the usual shapes. Avoid N-of-N. Losing one key
+should not brick the funds.
+
+The source's numbers (at least three signers, about half
+required, more signers above large balances) are
+examples from protocol practice. Copy the idea, not the
+spreadsheet.
+
+Every signer uses hardware. Dedicated address per
+multisig, even if it is only another index on the same
+device. Same seed still means one seed incident burns
+every seat.
+
+\section{Independence}
+
+Two keys on one laptop is one key. Two devices in one
+apartment is one burglary. Two signers who share a
+password manager is one phish. Different brands, different
+cities, different people.
+
+Include at least one person who will actually read
+calldata. A quorum of executives who tap Approve because
+the group chat said so is a hot wallet with extra
+steps.
+
+\section{How you operate}
+
+Dedicated channel for signing. Backup way to reach
+people. Out-of-band check before adding or replacing a
+signer: video plus a signed message, not a DM.
+
+Never copy destinations from explorer history or chat.
+Poisoned lookalikes are cheap. First-time recipients get
+a tiny bidirectional test. Address changes get the full
+re-verify, not an edit in the address book.
+
+Anyone can create a Safe, add your address, and park a
+lookalike in your dashboard. Check the full address.
+Bookmark the real one. Ignore mystery Safes.
+
+If a key might be burned, tell the others immediately.
+The remaining quorum replaces it. That is the feature.
+Do not wait until you ``know for sure.''
