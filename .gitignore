@@ -1,0 +1,9 @@
+output/
+tmp/
+build/
+**/__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+*.swp
+*~

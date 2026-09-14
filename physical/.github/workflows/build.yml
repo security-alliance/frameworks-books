@@ -1,0 +1,44 @@
+name: Build physical security pocket guide
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [develop, main]
+    paths:
+      - "docs/pages/physical-security/**"
+      - "publishing/physical-security-book/**"
+  pull_request:
+    paths:
+      - "docs/pages/physical-security/**"
+      - "publishing/physical-security-book/**"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: Test anonymous container wrapper
+        run: python3 -m unittest discover -s publishing/physical-security-book/tests -v
+
+      - name: Build and verify in the container
+        run: |
+          base_url=https://frameworks.securityalliance.dev
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            base_url=https://frameworks.securityalliance.org
+          fi
+          CONTAINER_ENGINE=docker \
+            FRAMEWORKS_REPO="$GITHUB_WORKSPACE" \
+            REF="$GITHUB_SHA" \
+            BASE_URL="$base_url" \
+            ./publishing/physical-security-book/container/build.sh
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: physical-security-pocket-guide
+          path: |
+            publishing/physical-security-book/output/pdf/physical-security-pocket-guide.pdf
+            publishing/physical-security-book/output/physical-security-pocket-guide-latex-source.zip

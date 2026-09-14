@@ -1,0 +1,57 @@
+{
+  "parts": [
+    {
+      "number": "01",
+      "title": "THE THREAT",
+      "tagline": "Who can reach people, keys, devices, and routines.",
+      "chapters": [
+        "docs/pages/physical-security/overview.mdx",
+        "docs/pages/physical-security/coercion-and-duress/overview.mdx",
+        "docs/pages/physical-security/coercion-and-duress/threat-model.mdx"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "HOW THEY PICK YOU",
+      "tagline": "Visibility, concentrated power, early signals.",
+      "chapters": [
+        "docs/pages/physical-security/coercion-and-duress/risk-factors-and-early-signals.mdx"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "DESIGN THE KEYS",
+      "tagline": "Make coercion of one person insufficient.",
+      "chapters": [
+        "docs/pages/physical-security/coercion-and-duress/defensive-design-principles.mdx",
+        "docs/pages/physical-security/coercion-and-duress/wallet-and-key-architecture.mdx"
+      ]
+    },
+    {
+      "number": "04",
+      "title": "PROTECT THE PEOPLE",
+      "tagline": "What follows a signer around.",
+      "chapters": [
+        "docs/pages/physical-security/coercion-and-duress/personal-and-family-safety.mdx"
+      ]
+    },
+    {
+      "number": "05",
+      "title": "IF IT HAPPENS",
+      "tagline": "Life first; contain when safe.",
+      "chapters": [
+        "docs/pages/physical-security/coercion-and-duress/transaction-flows-under-duress.mdx",
+        "docs/pages/physical-security/coercion-and-duress/incident-response.mdx"
+      ]
+    },
+    {
+      "number": "06",
+      "title": "AFTER",
+      "tagline": "Rebuild trust, support people, close the hole.",
+      "chapters": [
+        "docs/pages/physical-security/coercion-and-duress/recovery-and-resilience.mdx",
+        "docs/pages/physical-security/coercion-and-duress/checklist.mdx"
+      ]
+    }
+  ]
+}

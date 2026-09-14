@@ -1,0 +1,6 @@
+#!/bin/sh
+case "$1" in
+  -u) printf '%s\n' "${FAKE_HOST_UID:-1000}" ;;
+  -g) printf '%s\n' 1000 ;;
+  *) exit 2 ;;
+esac

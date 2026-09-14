@@ -1,0 +1,120 @@
+\chapter{Design the keys}
+
+The point of architecture here is not elegance. It is
+that a coerced person, in a short window, cannot empty
+the thing that matters. The victim should not have to
+out-tough the attacker. The system should fail closed
+without requiring heroics.
+
+The figures below are examples from the source, not a
+universal policy. Size them to your actual balances and
+your actual attackers.
+
+\section{Five principles}
+
+\textbf{Minimization.} Cap what any one coerced person
+can authorize in the time an attack usually lasts. Even
+full compliance should yield a loss you can survive.
+Make the attacker stay longer. Time is how they get
+caught.
+
+\textbf{Compartmentalization.} Split keys, identities,
+devices, places, and roles. A burned hot wallet should
+not point at cold storage. Signers should not all live
+in the same city, or all report to the same person.
+
+\textbf{Controlled surrender.} Give the attacker
+something true and small they can take now, in a range
+that matches what the public can already see. Keep the
+real reserve behind delay and extra people, and make
+that delay visible. A lie that collapses under stress is
+worse than a small honest wallet.
+
+\textbf{Resilience.} You will need to rebuild. No single
+backup, no single restorer, no blame circus that leaks
+the rest of the story.
+
+\textbf{Prioritization.} Human safety beats assets. No
+rule should reward physical resistance. Wallet policy
+yields when someone is being hurt.
+
+\section{Wallet tiers}
+
+Think in tiers with different jobs, not one ``the
+wallet.''
+
+\textbf{Hot (example: 0--1\%).} Daily ops, gas, small
+payments. Strict daily limits. No path from here into
+cold.
+
+\textbf{Warm (example: 1--5\%).} A few days of payroll or
+vendors. Extra approval and delay as size grows.
+
+\textbf{Cold (example: 5--25\%).} Hours to a few days,
+hardware signers, stored off the home and the office.
+
+\textbf{Deep-cold (the rest).} Strategic reserve.
+Recovery that takes legal process or a ceremony measured
+in days or weeks, not a PIN in a kitchen.
+
+Those percentages are prompts. A solo trader and a DAO
+treasury should not share a template.
+
+\section{Multisig, MPC, geography}
+
+For material movement, spread signing so that grabbing
+one person does not complete the payment. The source
+talks in ranges such as 3-of-5 or 4-of-7. The number
+matters less than the independence: different places,
+different risk, different ways of being reached.
+
+MPC is the same idea with shares instead of distinct
+keys. The requirement is identical. No single share
+spends.
+
+\textbf{Do not keep hardware wallets, seeds, or signer
+devices at the primary residence.} Home is where wrench
+attacks happen. Temporary hot access via a secure
+element is a different problem from storing the reserve
+under the bed.
+
+Offsite means a vault, a bank box, or a trusted location
+that is not on your daily loop. Deep-cold can be an
+institutional custodian. Protocol treasuries can add
+timelocks, pause, or an emergency path that a coerced
+admin cannot skip.
+
+\section{A wallet you can hand over}
+
+Keep one wallet whose balance you can surrender without
+lying, sized to look real against public activity. The
+source's example range is a few thousand dollars, plus
+a pre-funded exchange account around \$10k for personas
+that would plausibly have one. Again: examples. A public
+trader with obvious volume cannot hand over \$400 and
+expect to be believed.
+
+\textbf{Make the real reserve's delay obvious.}
+Timelocks and extra signers the attacker can see. The
+goal is to remove the incentive to keep hitting you for
+the rest.
+
+If the device supports a duress PIN, wire it to a silent
+alert for a pre-agreed contact. Silent means no extra
+call or text the attacker watches you send. This is the
+control that gets people killed when it is amateurish.
+Rehearse it with people who do crisis work, or do not
+use it.
+
+\section{Ceremonies and rotation}
+
+Generate material in a place that is not anyone's house,
+with more than one person, and without a whole seed
+sitting on a table. Split shards. Record the ceremony if
+your threat model wants an audit trail.
+
+Review who can still sign. Refresh hardware on a
+calendar, and after travel that raised the physical
+risk. After an incident, assume a 24-hour replacement
+path already exists. Inventing one while someone is in
+hospital is how you reuse a compromised signer.

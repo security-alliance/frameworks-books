@@ -1,0 +1,999 @@
+\partpage{01}{UNDERSTAND}{Map who can reach people, keys, devices, and routines.}
+
+\chapter{Physical Security}\label{physical-security}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Physical security protects people and assets from threats that bypass cryptography entirely: coercion, theft, surveillance, and tampering. It is a distinct domain from operational security, addressing bodily harm, forced access, and physical integrity rather than information disclosure.
+\end{quote}
+
+Cryptography and digital controls protect keys and data from algorithmic and remote attack. They do not protect the people who hold those keys from physical threats, nor the hardware and facilities those keys depend on. Physical security is the domain that addresses these threats directly: protecting people from harm and coercion, protecting physical assets from theft and tampering, detecting physical surveillance, and preserving the integrity of the hardware supply chain.
+
+\section{What physical security covers}\label{what-physical-security-covers}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{People:} Protection from bodily harm, forced access, kidnapping, and coercion of key-holders and their families.
+\item
+  \textbf{Physical assets:} Protection of devices, backups, and facilities from theft, destruction, and unauthorized access.
+\item
+  \textbf{Counter-surveillance:} Detecting and countering physical surveillance that precedes targeted attacks.
+\item
+  \textbf{Supply chain integrity:} Tamper evidence and provenance for the hardware that custodies keys.
+\end{itemize}
+
+\section{Relationship to Operational Security}\label{relationship-to-operational-security}
+
+Physical security and \href{https://frameworks.securityalliance.dev/opsec/overview}{Operational Security} are distinct but overlapping domains:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Operational Security} mitigates information disclosure through procedural and digital controls. Its goal is to reduce what an adversary can learn.
+\item
+  \textbf{Physical Security} mitigates bodily harm, forced access, and physical tampering through barriers, deterrence, deception, and response. Its goal is to reduce what an adversary can physically do.
+\end{itemize}
+
+Overlap areas - such as travel safety and device theft - are handled by cross-references rather than duplication. Where OpSec guidance touches physical coercion (for example, duress codes or border inspections), it links here rather than restating the controls.
+
+\section{What this framework covers}\label{what-this-framework-covers}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{\textbf{Coercion \& Duress}} - Defending key-holders against wrench attacks: coercion, kidnapping, and extortion targeting the people who control keys. This is the most developed sub-section of the framework.
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/facility-and-perimeter/overview}{\textbf{Facility \& Perimeter Security}} - Access control, surveillance, environmental controls, and secure facility design. \emph{(In progress.)}
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/physical-counter-surveillance/overview}{\textbf{Physical Counter-Surveillance}} - Detecting and countering physical surveillance of people and locations. \emph{(In progress.)}
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/supply-chain-physical-integrity/overview}{\textbf{Supply Chain Physical Integrity}} - Tamper evidence and hardware provenance for devices that custody keys. \emph{(In progress.)}
+\end{itemize}
+
+\section{Related frameworks}\label{related-frameworks}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/opsec/overview}{Operational Security} - information disclosure and routine OPSEC
+\item
+  \href{https://frameworks.securityalliance.dev/wallet-security/overview}{Wallet Security} - technical custody and wallet controls
+\item
+  \href{https://frameworks.securityalliance.dev/incident-management/overview}{Incident Management} - general incident response
+\item
+  \href{https://frameworks.securityalliance.dev/supply-chain/overview}{Supply Chain Security} - software and vendor supply chain
+\item
+  \href{https://frameworks.securityalliance.dev/treasury-operations/overview}{Treasury Operations} - organizational treasury process
+\end{itemize}
+
+\section{Who this framework serves}\label{who-this-framework-serves}
+
+This framework serves individuals (founders, traders, KOLs) and organizations (exchanges, funds, DAOs, and protocols) that control significant on-chain or custodial balances, as well as anyone whose role makes them a target for physical attack because of the assets they can access.
+
+\chapter{How to Protect Against Wrench Attacks}\label{how-to-protect-against-wrench-attacks}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Physical attacks bypass technical security by coercing the people who hold keys. As self-custody and on-chain treasuries grow, this threat vector now affects individuals and organizations alike, demanding dedicated controls beyond cryptography.
+\end{quote}
+
+This page is the overview of the \textbf{Coercion \& Duress} sub-section of the \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security} framework. It focuses specifically on wrench attacks: coercion of the people who control keys. For other physical security domains, see the \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security overview}.
+
+Cryptography protects keys from algorithmic attack, not from coercion of the people who hold them. As self-custody, on-chain treasuries, and high-profile crypto-native individuals become more common, adversaries increasingly bypass technical defenses by targeting people directly through threats, surveillance, kidnapping, or extortion. These are commonly referred to as \textbf{wrench attacks}.
+
+\section{What is a wrench attack?}\label{what-is-a-wrench-attack}
+
+A wrench attack is any situation where an attacker bypasses technical security by directly targeting the person who controls the keys. Unlike phishing, malware, or protocol exploits, wrench attacks assume the attacker has physical proximity or credible reach to the victim, and that technical controls alone are insufficient.
+
+The term originates from the \href{https://xkcd.com/538/}{xkcd webcomic}, which satirically illustrated that sophisticated 4096-bit RSA encryption could be bypassed more effectively by a \$5 wrench than by a supercomputer.
+
+\section{Why this matters now}\label{why-this-matters-now}
+
+\begin{itemize}
+\tightlist
+\item
+  Growth of self-custody, non-custodial wallets, and on-chain treasuries means more value is directly controlled by a small number of individuals, often without institutional physical security.
+\item
+  Public on-chain data, social media signaling, and leaks make it easier for adversaries to identify likely high-value targets and correlate them with real-world identities.
+\item
+  Existing wallet security guidance focuses mainly on technical compromise, leaving physical and social-engineering vectors underserved.
+\end{itemize}
+
+\section{Scope}\label{scope}
+
+This sub-section covers individuals (founders, traders, KOLs) and organizations such as crypto exchanges, funds, DAOs, and protocols operating with significant on-chain or custodial balances.
+
+It assumes that adversaries can use basic OSINT, social engineering, and physical surveillance to find and pressure key-holders.
+
+\section{Related frameworks}\label{related-frameworks-1}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security overview}
+\item
+  \href{https://frameworks.securityalliance.dev/wallet-security/overview}{Wallet Security}
+\item
+  \href{https://frameworks.securityalliance.dev/opsec/overview}{Operational Security}
+\item
+  \href{https://frameworks.securityalliance.dev/incident-management/overview}{Incident Management}
+\end{itemize}
+
+\chapter{Threat Model}\label{threat-model}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Wrench attackers range from opportunistic criminals to organized crime, insiders, and state actors. Their objectives span direct theft, extortion, operational coercion, and intelligence gathering, executed across residential, workplace, public, and family-adjacent attack surfaces.
+\end{quote}
+
+Wrench attacks rely on coercing people, not breaking cryptography. This section characterizes who the adversaries are, what they want, and where they are most likely to strike, so that wallet and key setups can be aligned to real-world risk instead of purely technical assumptions.
+
+\section{Attacker types}\label{attacker-types}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Opportunistic criminals:} Street-level or local gangs who become aware that a target "has crypto" (through social media, lifestyle, or loose talk) and attempt fast, high-pressure extortion with limited technical skills. These actors typically aim for immediate liquid funds (hot wallets, exchange accounts) and are more sensitive to time pressure and visible risk.
+\item
+  \textbf{Organized crime groups:} Structured groups that combine OSINT, surveillance, and insider recruitment to identify and pressure high-value key-holders, including founders and treasury staff.
+\item
+  \textbf{Insiders and close circle:} Current or former employees, contractors, business partners, family members, or intimate partners who know or suspect that the victim controls significant digital assets. They often possess contextual knowledge (where devices are, when approvals happen, who else can sign), making them especially dangerous in blended social-physical attacks.
+\item
+  \textbf{State actors:} Security services, law-enforcement units, or proxy groups in jurisdictions with weak rule of law or hostile regulatory environments, using detention, travel stops, or raids to obtain keys or force on-chain actions.
+\end{itemize}
+
+\section{Attacker objectives}\label{attacker-objectives}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Direct theft:} Forcing the victim to unlock devices, disclose seed phrases, or sign transactions to transfer funds to attacker-controlled addresses.
+\item
+  \textbf{Extortion and blackmail:} Using threats of continued violence, exposure, or reputational damage to demand repeated payments over time. May target both personal funds and organizational treasuries.
+\item
+  \textbf{Operational coercion:} Forcing specific on-chain actions: pausing or upgrading contracts, whitelisting addresses, approving malicious proposals, or leaking internal secrets and signing policies.
+\item
+  \textbf{Intelligence gathering:} Mapping the organization\textquotesingle s wallet architecture, signing processes, key-holders, and recovery mechanisms for future operations.
+\end{itemize}
+
+\section{Attack surfaces}\label{attack-surfaces}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Residential environment:} Home invasions, confrontations in building common areas, parking ambushes, and threats involving family members or roommates.
+\item
+  \textbf{Workplace:} Approaching treasury, operations, or engineering staff near the office, parking areas, or on their commute home. Risks increase when work devices with wallet access leave secure premises or when visitors can move freely inside office spaces.
+\item
+  \textbf{Public spaces:} Incidents in cafés, restaurants, airports, hotels, or nightlife locations where routine patterns are easy to observe. Crypto events (conferences, side-events) are particularly attractive hunting grounds, as they densely concentrate potential targets.
+\item
+  \textbf{Family, friends, and staff:} Threats directed at spouses, partners, children, drivers, assistants, or security staff, who may have indirect access. Attackers can also use them as leverage.
+\end{itemize}
+
+\section{Further reading}\label{further-reading}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/risk-factors-and-early-signals}{Risk Factors and Early Signals}: how these attackers select and approach targets
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/defensive-design-principles}{Defensive Design Principles}: the controls that answer this threat model
+\item
+  \href{https://frameworks.securityalliance.dev/threat-modeling/overview}{Threat Modeling}: a structured method for building your own
+\end{itemize}
+
+\chapter{Risk Factors and Early Signals}\label{risk-factors-and-early-signals}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Public visibility, predictable routines, concentrated key-holder power, weak governance, and high-risk geographies amplify wrench-attack exposure. Reconnaissance patterns, targeted doxxing, and unfamiliar surveillance often precede physical attempts, providing critical warning windows when monitored.
+\end{quote}
+
+\section{Individual risk factors}\label{individual-risk-factors}
+
+Public visibility and signaling are among the strongest individual risk amplifiers for wrench attacks. Founders, KOLs, traders, and engineers who publicly reference large fundraising rounds, trading gains, or treasury balances substantially increase their appeal as targets.
+
+Lifestyle choices and daily routines further magnify this exposure by making physical access both predictable and low-cost. Conspicuous displays of wealth, such as luxury cars, expensive accessories, or frequent premium travel, combined with repetitive behaviors enable even rudimentary surveillance to identify favorable moments for intervention.
+
+Operating from unsecured home environments while routinely approving high-value transactions also collapses digital control and physical presence into the same space, centralizing financial risk and personal safety threats on a single individual.
+
+\section{Organizational risk factors}\label{organizational-risk-factors}
+
+Organizational risk factors primarily stem from concentrated key-holder power and weak separation of duties, which create high-value targets for wrench attacks. When a single individual can authorize major treasury movements, physical coercion becomes an efficient path to theft.
+
+Poor governance exacerbates this risk by treating key management as a purely technical function, disconnected from physical security and HR oversight, leaving key exposures unaddressed during hiring, role transitions, or travel.
+
+\section{Environmental and geographic risk factors}\label{environmental-and-geographic-risk-factors}
+
+Regions with high rates of violent crime, weak law enforcement, or corruption raise the baseline probability that crypto-related targets will be identified and approached. Travel to jurisdictions with aggressive or opaque enforcement practices increases the risk of "official" coercion at borders, hotels, or offices.
+
+\section{Early signals and pre-incident indicators}\label{early-signals-and-pre-incident-indicators}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{OSINT and probing behavior:} Unusual follower spikes, repeated DMs asking operational questions, or detailed probing about treasury structure, custody, or personal routines can signal reconnaissance. Repeated appearance of unfamiliar individuals around home or office should be treated as a potential warning.
+\item
+  \textbf{Escalating threats and doxxing:} Targeted harassment, threats mentioning family, or doxxing posts linking real identity to wallet addresses or balances often precede physical attempts. Leaks of internal documents or partial leaks of residential or work addresses can also mark a shift from opportunistic to targeted risk.
+\end{itemize}
+
+\section{Further reading}\label{further-reading-1}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/threat-model}{Threat Model}: who acts on these signals and why
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/personal-and-family-safety}{Personal and Family Safety}: reducing the exposure these factors describe
+\item
+  \href{https://frameworks.securityalliance.dev/privacy/digital-footprint}{Digital Footprint}: the public information attackers use to select targets
+\end{itemize}
+
+\partpage{02}{DESIGN}{Make coercion of one person insufficient.}
+
+\chapter{Defensive Design Principles}\label{defensive-design-principles}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Five principles anchor wrench-attack defense: minimization limits what any coerced individual can authorize; compartmentalization segments keys and roles; controlled surrender offers a believable low-value payout while real reserves sit behind visible delay; resilience enables recovery; prioritization always favors human safety over assets.
+\end{quote}
+
+These principles guide all subsequent controls, ensuring wallet architectures and operational processes withstand coercion without relying solely on the victim\textquotesingle s resistance under extreme pressure.
+
+\section{Minimization}\label{minimization}
+
+\begin{itemize}
+\tightlist
+\item
+  Minimize the value and impact of what any single coerced individual can authorize during a time-constrained attack window.
+\item
+  Design wallet tiers and signing limits so that even full compliance yields only low-to-moderate losses, forcing attackers to sustain operations longer and increasing their detection risk.
+\end{itemize}
+
+\section{Compartmentalization}\label{compartmentalization}
+
+\begin{itemize}
+\tightlist
+\item
+  Segment keys, identities, devices, locations, and roles to prevent compromise of one element from cascading across the entire stack.
+\item
+  Separate hot wallets for daily ops from cold storage for long-term holdings, and distribute signer responsibilities across jurisdictions, risk profiles, and access methods.
+\end{itemize}
+
+\section{Controlled surrender}\label{controlled-surrender}
+
+\begin{itemize}
+\tightlist
+\item
+  Offer attackers a small, believable payout they can take immediately, such as a low-value wallet with balances matching the victim\textquotesingle s public profile.
+\item
+  Keep strategic reserves behind time-locks and multi-party approval whose delay is visible and cannot be shortened under coercion.
+\item
+  Wire duress wallets to fund-movement alerts that notify trusted contacts silently, enabling distress signaling without any call or text from the victim.
+\end{itemize}
+
+\section{Resilience}\label{resilience}
+
+\begin{itemize}
+\tightlist
+\item
+  Design for post-incident recovery without single points of failure.
+\item
+  Protect human factors: avoid blame cycles, control information flows to prevent secondary leaks or attrition.
+\item
+  Maintain operational continuity through distributed knowledge and pre-tested reconstruction.
+\end{itemize}
+
+\section{Prioritization}\label{prioritization}
+
+\begin{itemize}
+\tightlist
+\item
+  Sequence all controls to favor human safety over assets during active threats.
+\item
+  No policy should incentivize physical resistance; wallet rules yield immediately to safety triggers.
+\item
+  Integrate with physical security, crisis management, and law enforcement protocols.
+\end{itemize}
+
+\section{Further reading}\label{further-reading-2}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/wallet-and-key-architecture}{Wallet and Key Architecture}: minimization and compartmentalization applied to keys
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/transaction-flows-under-duress}{Transaction Flows Under Duress}: controlled surrender in the signing path
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/checklist}{Checklist}: turning these principles into sequenced work
+\end{itemize}
+
+\chapter{Wallet and Key Architecture}\label{wallet-and-key-architecture}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Tiered wallet structures (hot, warm, cold, deep-cold) combined with multisig or MPC, geographic key distribution, controlled-surrender wallets, and rotation policies ensure no single coerced individual can drain strategic reserves under pressure.
+\end{quote}
+
+\section{Wallet strategy}\label{wallet-strategy}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Hot wallets (0-1\% of total value):} Daily operational funds on L1/L2 for gas, small payments, emergency liquidity. Strict daily spend limits (under \$10k equivalent), no direct path to cold storage.
+\item
+  \textbf{Warm wallets (1-5\%):} Short-term operational (1-7 days) funds for payroll, vendor payments, marketing. Geo-fenced approvals, multisig with time delays for larger moves.
+\item
+  \textbf{Cold wallets (5-25\%):} Medium-term holdings accessible within 24-72 hours via hardware signers. Stored in bank vaults or secure facilities, never at primary residence or office.
+\item
+  \textbf{Deep-cold (remaining balance):} Strategic reserves in air-gapped HSMs, multi-party custodians, or institutional custody. Recovery requires legal processes or key ceremonies spanning weeks.
+\end{itemize}
+
+\section{Multisig and MPC}\label{multisig-and-mpc}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Multisig setups:} Minimum 3-of-5 or 4-of-7 signers for any material movement; distribute across geographies and risk profiles so coercing one person blocks action.
+\item
+  \textbf{MPC (multi-party computation):} Threshold schemes where no single key share enables spending.
+\end{itemize}
+
+\section{Geographically decoupled key storage}\label{geographically-decoupled-key-storage}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Primary residence:} Never store hardware wallets, seeds, or signer devices. Use only temporary hot wallet access via secure elements (YubiKey, phone-bound keys).
+\item
+  \textbf{Secure offsite locations:} Bank safety deposit boxes, private vaults, or trusted family abroad for cold wallet hardware.
+\item
+  \textbf{Institutional custodians:} Fireblocks, Copper, or regulated providers for deep-cold.
+\item
+  \textbf{Smart contract guardians:} Protocol-level treasuries use on-chain timelocks, pause functions, or emergency multisig for protocol upgrades under duress.
+\end{itemize}
+
+\section{Controlled-surrender wallets and duress tripwires}\label{controlled-surrender-wallets-and-duress-tripwires}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Readily-surrendered funds:} Keep one small wallet (\$2k-\$5k, with balances matching observed transaction patterns) that can be handed over truthfully under duress, rather than relying on a lie that may fail under stress. Seeds and PINs memorized separately for handover.
+\item
+  \textbf{Visible friction on real reserves:} Use on-chain time-locks, multisig, and multi-party approval on strategic funds so larger amounts demonstrably cannot be moved quickly, reducing the attacker\textquotesingle s incentive to keep coercing.
+\item
+  \textbf{Duress tripwires:} Tie the small wallet\textquotesingle s duress PIN to silent alerts that notify trusted contacts and, where appropriate, law enforcement.
+\item
+  \textbf{Burner exchange accounts:} Pre-funded CEX accounts (around \$10k) linked to public personas, for immediate handover without touching core holdings.
+\end{itemize}
+
+\section{Key ceremonies and rotation policies}\label{key-ceremonies-and-rotation-policies}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Initial key ceremonies:} Conducted in neutral third-party locations with video audit trails. Mnemonic shards split across a minimum of 3 participants, never whole seeds.
+\item
+  \textbf{Periodic rotations:} Quarterly review of signer eligibility. Annual full key refresh with new hardware and devices. Trigger rotations after travel to high-risk jurisdictions.
+\item
+  \textbf{Post-incident rotation:} Pre-defined playbook for 24-hour signer replacement, contract migrations, and full-stack rebuild without single points of failure.
+\end{itemize}
+
+\section{Further reading}\label{further-reading-3}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/transaction-flows-under-duress}{Transaction Flows Under Duress}: how this architecture behaves under pressure
+\item
+  \href{https://frameworks.securityalliance.dev/wallet-security/seed-phrase-management}{Seed Phrase Management}: offline custody for the material split here
+\item
+  \href{https://frameworks.securityalliance.dev/wallet-security/secure-multisig-best-practices}{Secure Multisig Best Practices}: signer and threshold design
+\end{itemize}
+
+\chapter{Personal and Family Safety}\label{personal-and-family-safety}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Opsec reduces what adversaries can learn about targets and routines. Controls span digital hygiene, identity separation between public and asset-control personas, family and staff training, physical routine hardening, and social engineering resistance.
+\end{quote}
+
+Opsec shrinks the real-world attack surface by reducing what adversaries can learn about targets, their routines, and their connections to digital assets.
+
+\section{Digital hygiene}\label{digital-hygiene}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Eliminate persistent OSINT signals:} Scrub public profiles of home addresses, vehicle plates, routine locations (gyms, cafés), and geo-tagged photos. Use temporary numbers and emails for non-essential accounts. Complete PII removal often requires a corporate or legal entity as a shield. Run a tabletop threat model first to gauge what exposure is acceptable for your risk profile.
+\item
+  \textbf{Harden devices:} Full-disk encryption, no seed phrases or wallet apps on always-on phones or laptops, regular factory resets on operational devices, no cloud sync of sensitive data.
+\item
+  \textbf{Financial anonymity:} Route crypto operations through privacy-preserving tools where legally permissible, avoid linking exchange KYC to public social handles, use business entities for high-value holdings.
+\end{itemize}
+
+\section{Identity separation}\label{identity-separation}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Public persona vs. asset control:} Maintain distinct digital identities for social presence versus wallet signing.
+\item
+  \textbf{Compartmentalized devices:} Public phone for social and travel use; signer phone kept in secure location, never carried together.
+\item
+  \textbf{Family dissociation:} No joint public profiles, separate finances and devices, educate on not discussing crypto holdings or signing routines at home or social events.
+\end{itemize}
+
+\section{Physical security}\label{physical-security-1}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Key storage:} Never keep cold-storage signing keys on your person or in a location that follows your physical routine. Store hardware wallets and seed backups in geographically separate secure locations.
+\end{itemize}
+
+\section{Family and staff training}\label{family-and-staff-training}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Simple family protocols:} "If someone asks about money or crypto, say nothing and text {[}safe word{]} to {[}emergency contact{]}." Pre-rehearsed silent alarms to neighbors or security.
+\item
+  \textbf{Staff NDAs and drills:} Drivers and assistants trained to vary routes, report surveillance, and never discuss the principal\textquotesingle s assets or locations. Tabletop exercises for home and office scenarios.
+\item
+  \textbf{Children and vulnerable contacts:} Age-appropriate rules ("never open the door for strangers," "never share phone screens"), school pick-up codes, and emergency family assembly points.
+\item
+  \textbf{Panic buttons:} Fit home and vehicles with discrete panic buttons linked to a monitoring service so any household member can trigger a silent alert.
+\end{itemize}
+
+\section{Physical routine hardening}\label{physical-routine-hardening}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Unpredictability:} Rotate gyms, cafés, and commutes weekly; avoid solo night outings; use ride-shares with fake names or pickup locations; never carry more than \$2k cash or cards visibly.
+\item
+  \textbf{Home defenses:} Reinforced doors and windows, cameras with remote alerts, safe rooms, no visible luxury goods or crypto-branded items.
+\item
+  \textbf{Travel hardening:} No wallet signing during trips, inform trusted contacts of itineraries, use hotel safes for devices, avoid high-profile events solo.
+\end{itemize}
+
+\section{Social engineering resistance}\label{social-engineering-resistance}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Standard responses to probes:} "I don\textquotesingle t handle that" or "Ask my lawyer/colleagues" for any crypto questions. Never confirm or deny holdings.
+\item
+  \textbf{Cover narratives:} Plausible stories like "Everything\textquotesingle s in custody" or "The team handles treasury," consistent across family and staff, to deflect without raising suspicion.
+\item
+  \textbf{Regular audits:} Quarterly review of social profiles, on-chain links to identities, and staff access by external security consultants.
+\end{itemize}
+
+\section{Further reading}\label{further-reading-4}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/risk-factors-and-early-signals}{Risk Factors and Early Signals}: what raises exposure in the first place
+\item
+  \href{https://frameworks.securityalliance.dev/privacy/digital-footprint}{Digital Footprint}: reducing the public data that enables targeting
+\item
+  \href{https://frameworks.securityalliance.dev/privacy/data-removal-services}{Data Removal Services}: removing address and identity records from brokers
+\end{itemize}
+
+\partpage{03}{EXTEND}{Carry protection into places, surveillance, and hardware provenance.}
+
+\chapter{Facility \& Perimeter Security}\label{facility-perimeter-security}
+
+\begin{quote}
+\textbf{DOMAIN STATUS: IN PROGRESS.} The online framework currently defines scope only; this edition does not invent controls beyond the reviewed source.
+\end{quote}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Facility and perimeter security protects the locations where keys, backups, and signing devices live through layered access control, surveillance, environmental hardening, and secure room design.
+\end{quote}
+
+This sub-section of the \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security} framework will cover the controls that protect physical locations used for key storage and signing operations.
+
+Planned topics include:
+
+\begin{itemize}
+\tightlist
+\item
+  Layered access control (mechanical and electronic) for homes, offices, and data rooms
+\item
+  Surveillance and intrusion detection
+\item
+  Environmental controls (fire, flood, power, and climate) for backup and device storage
+\item
+  Secure room and safe design for high-value key material
+\end{itemize}
+
+Contributions are welcome. See the \href{https://frameworks.securityalliance.dev/contribute/contributing}{contributing guide} to help expand this section.
+
+\section{Further reading}\label{further-reading-5}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security overview}: how the pages of this framework fit together
+\item
+  \href{https://frameworks.securityalliance.dev/opsec/control-domains/physical-environmental/secure-workspace-travel}{Secure Workspace and Travel}: existing guidance on workspace hardening
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress}: the most developed sub-section of this framework
+\item
+  \href{https://frameworks.securityalliance.dev/contribute/contributing}{Contributing guide}: how to help expand this section
+\end{itemize}
+
+\chapter{Physical Counter-Surveillance}\label{physical-counter-surveillance}
+
+\begin{quote}
+\textbf{DOMAIN STATUS: IN PROGRESS.} The online framework currently defines scope only; this edition does not invent controls beyond the reviewed source.
+\end{quote}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Targeted physical attacks are usually preceded by surveillance and reconnaissance. Detecting that activity early gives a target time to change patterns, escalate protection, or avoid an incident entirely.
+\end{quote}
+
+This sub-section of the \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security} framework will cover how to detect and respond to physical surveillance directed at people and locations.
+
+Planned topics include:
+
+\begin{itemize}
+\tightlist
+\item
+  Recognizing fixed and mobile surveillance
+\item
+  Surveillance detection routes and pattern variation
+\item
+  Identifying pre-attack reconnaissance signals
+\item
+  Practical countermeasures and escalation thresholds
+\end{itemize}
+
+Contributions are welcome. See the \href{https://frameworks.securityalliance.dev/contribute/contributing}{contributing guide} to help expand this section.
+
+\section{Further reading}\label{further-reading-6}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security overview}: how the pages of this framework fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/risk-factors-and-early-signals}{Risk Factors and Early Signals}: pre-incident indicators covered today
+\item
+  \href{https://frameworks.securityalliance.dev/privacy/digital-footprint}{Digital Footprint}: the online half of reconnaissance
+\item
+  \href{https://frameworks.securityalliance.dev/contribute/contributing}{Contributing guide}: how to help expand this section
+\end{itemize}
+
+\chapter{Supply Chain Physical Integrity}\label{supply-chain-physical-integrity}
+
+\begin{quote}
+\textbf{DOMAIN STATUS: IN PROGRESS.} The online framework currently defines scope only; this edition does not invent controls beyond the reviewed source.
+\end{quote}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Hardware that custodies keys can be compromised before it reaches the user through interdiction, substitution, or tampering. Verifying physical provenance and tamper evidence protects the root of trust.
+\end{quote}
+
+This sub-section of the \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security} framework will cover the physical integrity of the hardware supply chain for devices that custody keys.
+
+Planned topics include:
+
+\begin{itemize}
+\tightlist
+\item
+  Tamper-evident packaging and seal verification
+\item
+  Provenance and authenticity checks for hardware wallets and signing devices
+\item
+  Detecting interdiction and device substitution
+\item
+  Secure procurement and chain-of-custody practices
+\end{itemize}
+
+Contributions are welcome. See the \href{https://frameworks.securityalliance.dev/contribute/contributing}{contributing guide} to help expand this section.
+
+\section{Further reading}\label{further-reading-7}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/overview}{Physical Security overview}: how the pages of this framework fit together
+\item
+  \href{https://frameworks.securityalliance.dev/opsec/control-domains/physical-environmental/tamper-evidence}{Tamper Evidence}: existing guidance on seals and detection
+\item
+  \href{https://frameworks.securityalliance.dev/supply-chain/overview}{Supply Chain Security}: the software and vendor counterpart
+\item
+  \href{https://frameworks.securityalliance.dev/contribute/contributing}{Contributing guide}: how to help expand this section
+\end{itemize}
+
+\partpage{04}{RESPOND}{Protect life first; contain the technical surface when safe.}
+
+\chapter{Transaction Flows Under Duress}\label{transaction-flows-under-duress}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Hard limits, time delays, separation of approval channels, plausible compliance paths, and tighter controls during high-risk periods ensure that coerced transactions cannot drain reserves or escalate to higher-privilege actions.
+\end{quote}
+
+\section{Hard limits and friction}\label{hard-limits-and-friction}
+
+\begin{itemize}
+\tightlist
+\item
+  Enforce per-transaction limits and daily limits on hot and warm wallets so coerced actions cannot drain strategic reserves in one sitting.
+\item
+  Require additional approvals once a transfer crosses predefined thresholds, even if the request looks operationally normal. Route approval requests across multiple independent communication channels so that a single compromised account cannot unilaterally authorize a transfer.
+\item
+  Prefer time delays for larger movements so that an attacker must sustain control for longer, increasing the chance of interruption.
+\end{itemize}
+
+\section{Separation of approval channels}\label{separation-of-approval-channels}
+
+\begin{itemize}
+\tightlist
+\item
+  Ensure the request and approval path are on different devices and ideally different people, so coercing one operator does not complete the full flow.
+\item
+  Keep high-privilege signing devices physically separated from day-to-day devices used in public or during travel.
+\item
+  Use geographic diversity for signers so a local incident cannot immediately compel all required approvals.
+\end{itemize}
+
+\section{Duress-compatible operating modes}\label{duress-compatible-operating-modes}
+
+\begin{itemize}
+\tightlist
+\item
+  Maintain a plausible, low-value compliance path that can satisfy an attacker quickly without exposing core funds.
+\item
+  Keep that compliance path consistent with the target\textquotesingle s profile and normal activity so it can withstand basic scrutiny during coercion.
+\item
+  Ensure the compliance path has no direct upgrade route to higher tiers.
+\end{itemize}
+
+\section{High-risk period tightening}\label{high-risk-period-tightening}
+
+\begin{itemize}
+\tightlist
+\item
+  During travel, temporarily lower limits and increase required approvals by policy.
+\item
+  Treat credible threats, doxxing, or surveillance indicators as triggers to move operations into a heightened security mode with reduced transaction capability.
+\end{itemize}
+
+\section{Further reading}\label{further-reading-8}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/wallet-and-key-architecture}{Wallet and Key Architecture}: the custody split these flows depend on
+\item
+  \href{https://frameworks.securityalliance.dev/wallet-security/secure-multisig-best-practices}{Secure Multisig Best Practices}: thresholds and signer separation
+\item
+  \href{https://frameworks.securityalliance.dev/multisig-for-protocols/overview}{Multisig for Protocols}: timelocks and approval paths at organization scale
+\end{itemize}
+
+\chapter{Incident Response}\label{incident-response}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} During an active wrench attack, prioritize human safety first, then contain the technical surface: rotate signers, pause contracts where possible, coordinate with custodians and law enforcement, and preserve evidence for investigation.
+\end{quote}
+
+Wrench-attack incident response must prioritize human safety first, while rapidly containing any ability to move funds or coerce additional signers.
+
+\section{Immediate triage}\label{immediate-triage}
+
+\begin{itemize}
+\tightlist
+\item
+  Treat it as a life-safety emergency first, and assume the victim may still be under observation or ongoing coercion.
+\item
+  Activate a pre-defined crisis channel and a single incident commander to avoid fragmented decisions and conflicting instructions. If the victim has K\&R (kidnap and ransom) insurance, immediately contact their team for assistance; reputable firms retain hostage negotiators for these situations.
+\item
+  Make an initial determination of what the attacker likely obtained.
+\end{itemize}
+
+\section{De-escalation}\label{de-escalation}
+
+\begin{itemize}
+\tightlist
+\item
+  Do not instruct actions that could escalate violence while the victim is under direct threat.
+\item
+  Move the victim (and family, if relevant) to a safe location and coordinate medical care, then transition to controlled debriefing once stable.
+\item
+  If travel-related, assume device seizure or border detention dynamics and involve local legal support immediately.
+\end{itemize}
+
+\section{Technical containment}\label{technical-containment}
+
+\begin{itemize}
+\tightlist
+\item
+  Rotate signers, disable compromised signers, and migrate funds from exposed tiers to contingency wallets.
+\item
+  If smart contracts are in scope, consider pausing, timelocking, or restricting privileged functions to prevent coercion-driven upgrades or admin actions.
+\item
+  Assume all secrets on any unlocked device are compromised, and rebuild from clean hardware with new credentials.
+\end{itemize}
+
+\section{Coordination with external parties}\label{coordination-with-external-parties}
+
+\begin{itemize}
+\tightlist
+\item
+  Contact custodians, exchanges, and key infrastructure vendors via established escalation paths to block suspicious movements and document actions taken.
+\item
+  Engage law enforcement through counsel and crisis-management support to preserve victim safety and handle reporting in a way that does not increase risk.
+\item
+  If insurance is relevant, notify per policy requirements while controlling operational details that could leak sensitive signer or location information.
+\end{itemize}
+
+\section{Evidence and decision logging}\label{evidence-and-decision-logging}
+
+\begin{itemize}
+\tightlist
+\item
+  Preserve transaction hashes, timestamps, communications, and device state information to support investigations and recovery actions.
+\item
+  Maintain a secure incident log of decisions, approvals, and containment steps to enable post-incident audit and prevent confusion across teams.
+\item
+  Limit internal distribution of sensitive incident details to a strict need-to-know group to reduce secondary leakage and follow-on targeting.
+\end{itemize}
+
+\section{Post-incident actions}\label{post-incident-actions}
+
+\begin{itemize}
+\tightlist
+\item
+  Conduct a controlled post-mortem that covers both wallet architecture weaknesses and physical/OSINT exposure, then implement prioritized remediation.
+\item
+  Refresh the entire key-management posture: new signer sets, revised limits, updated travel rules, and retraining for high-risk roles.
+\item
+  Provide structured support for affected individuals (time off, security upgrades, relocation support when necessary) to reduce further harm and stabilize operations.
+\end{itemize}
+
+\section{Further reading}\label{further-reading-9}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/recovery-and-resilience}{Recovery and Resilience}: what follows once the immediate threat ends
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/transaction-flows-under-duress}{Transaction Flows Under Duress}: the limits that buy time during an incident
+\item
+  \href{https://frameworks.securityalliance.dev/incident-management/overview}{Incident Management}: the wider response process this plugs into
+\end{itemize}
+
+\partpage{05}{RECOVER}{Rebuild trust, support people, and harden the system.}
+
+\chapter{Recovery and Resilience}\label{recovery-and-resilience}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Recovery rebuilds trust in wallet infrastructure and supports affected people. Reconstruction never reuses exposed keys, governance closes exploited gaps, and long-term monitoring detects persistent surveillance or follow-on attempts targeting victims and replacement wallets.
+\end{quote}
+
+Recovery focuses on safely restoring trust in the wallet infrastructure and supporting the people affected. Resilience means learning from the event to harden the entire system against future coercion attempts.
+
+\section{Human factors}\label{human-factors}
+
+\begin{itemize}
+\tightlist
+\item
+  Provide psychological support and professional counseling for victims and their families.
+\item
+  Assess whether the targeted individual can realistically continue in a key-holding role given their heightened profile and potential ongoing risk.
+\item
+  Address broader team morale and fear by communicating clearly about new security measures and support resources.
+\end{itemize}
+
+\section{Infrastructure reconstruction}\label{infrastructure-reconstruction}
+
+\begin{itemize}
+\tightlist
+\item
+  Do not reuse any seed phrases, private keys, or devices that were physically accessible during the incident, even if they appear untouched.
+\item
+  Build a new wallet hierarchy from scratch and migrate remaining assets only after validating the new setup.
+\item
+  Re-verify all multisig participants, threshold settings, and allowlists to ensure no attacker-controlled addresses or signers were inserted during the compromise.
+\end{itemize}
+
+\section{Governance}\label{governance}
+
+\begin{itemize}
+\tightlist
+\item
+  Revise travel, remote-work, and high-value transaction policies to close specific gaps exploited in the attack.
+\item
+  Formalize "lessons learned" into the risk register and training materials so new team members understand why specific constraints exist.
+\end{itemize}
+
+\section{Long-term monitoring}\label{long-term-monitoring}
+
+\begin{itemize}
+\tightlist
+\item
+  Implement enhanced monitoring for the affected individuals and new wallet addresses to detect any persistent surveillance or follow-on attempts.
+\item
+  Periodically re-assess the threat landscape to ensure the recovered posture remains effective over time.
+\item
+  Maintain a relationship with threat intelligence and physical security partners to stay ahead of evolving coercion techniques targeting the sector.
+\end{itemize}
+
+\section{Further reading}\label{further-reading-10}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/incident-response}{Incident Response}: the phase immediately before recovery
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/wallet-and-key-architecture}{Wallet and Key Architecture}: rebuilding custody after compromise
+\item
+  \href{https://frameworks.securityalliance.dev/incident-management/lessons-learned}{Lessons Learned}: converting the incident into durable change
+\end{itemize}
+
+\chapter{Checklist}\label{checklist}
+
+\begin{quote}
+\textbf{KEY TAKEAWAY.} Use phased actions - immediate personal and org hardening, structural wallet and role changes within months, then advanced drills and monitoring - so coercion defenses mature on a clear timeline rather than ad hoc.
+\end{quote}
+
+This checklist translates this section\textquotesingle s guidance into concrete actions, divided by implementation phase and entity type, to help prioritize deployment.
+
+\section{Maturity assessment}\label{maturity-assessment}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Basic (high risk):} Single-factor cold storage, no daily limits, ad-hoc signing, high public visibility.
+\item
+  \textbf{Intermediate (medium risk):} Multisig or MPC for treasury, basic limits, separate signing devices, some staff training.
+\item
+  \textbf{Advanced (low risk):} Geo-distributed keys, strict role separation, time-locked reserves, regular drills, 24/7 monitoring.
+\end{itemize}
+
+\section{Immediate hardening (day 1-7)}\label{immediate-hardening-day-1-7}
+
+\subsection{Individual}\label{individual}
+
+\begin{itemize}
+\tightlist
+\item
+  ( ) Remove all wallet apps, exchange account apps, seeds, and screenshots from daily-driver phones and laptops.
+\item
+  ( ) Set strict daily spending limits on hot wallets (under \$10k equivalent) and move excess to cold storage.
+\item
+  ( ) Create one small "give-up" wallet with a realistic balance you can surrender truthfully under duress, and wire its duress PIN to a silent alert.
+\item
+  ( ) Audit home and office for visible hardware wallets or recovery sheets and move them to secure storage.
+\end{itemize}
+
+\subsection{Organization}\label{organization}
+
+\begin{itemize}
+\tightlist
+\item
+  ( ) Audit all active signers.
+\item
+  ( ) Verify that no single person can unilaterally move more than 1-5\% of treasury assets without a second approver.
+\item
+  ( ) Brief key staff on "safety first" protocols.
+\end{itemize}
+
+\section{Structural architecture (month 1-3)}\label{structural-architecture-month-1-3}
+
+\subsection{Individual}\label{individual-1}
+
+\begin{itemize}
+\tightlist
+\item
+  ( ) Separate "public identity" digital footprint from "asset control" identity:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ( ) Dedicated email
+  \item
+    ( ) Dedicated SIM and phone
+  \item
+    ( ) Dedicated device
+  \end{itemize}
+\item
+  ( ) Establish a cold storage tier (multisig or MPC) where keys are geographically separated.
+\item
+  ( ) Implement a "duress code" or panic protocol with a trusted contact or security service:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ( ) Trusted contact
+  \item
+    ( ) Security service
+  \end{itemize}
+\end{itemize}
+
+\subsection{Organization}\label{organization-1}
+
+\begin{itemize}
+\tightlist
+\item
+  ( ) Deploy a tiered wallet architecture (hot, warm, cold) with automated limits and a defined purpose per tier.
+\item
+  ( ) Implement MPC or multisig with geographic and role-based distribution (e.g., Legal + Finance + Ops).
+\item
+  ( ) Formalize the "key ceremony" process for generating and backing up new operational keys.
+\item
+  ( ) Integrate wallet security training into onboarding for all staff.
+\end{itemize}
+
+\section{Advanced resilience (month 3-6+)}\label{advanced-resilience-month-3-6}
+
+\subsection{Individual}\label{individual-2}
+
+\begin{itemize}
+\tightlist
+\item
+  ( ) Conduct a full OSINT cleanup of personal data:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ( ) Home address
+  \item
+    ( ) Family details
+  \item
+    ( ) Travel patterns
+  \item
+    ( ) Social media
+  \end{itemize}
+\item
+  ( ) Establish a relationship with a physical security provider for travel risk assessments and monitoring.
+\item
+  ( ) Set up a formal legal structure (trust or LLC) to obscure asset ownership where possible.
+\item
+  ( ) Evaluate K\&R (kidnap and ransom) insurance with a policy that covers crypto-specific risks; these providers typically include hostage negotiators and can advise on travel risk assessments.
+\end{itemize}
+
+\subsection{Organization}\label{organization-2}
+
+\begin{itemize}
+\tightlist
+\item
+  ( ) Run quarterly tabletop exercises simulating coercion, kidnapping, and insider threats.
+\item
+  ( ) Implement real-time transaction monitoring and anomaly detection for treasury wallets.
+\item
+  ( ) Establish a retained incident response relationship with crypto-specialized investigators and negotiators.
+\item
+  ( ) Conduct third-party penetration tests targeting technical infrastructure.
+\item
+  ( ) Conduct third-party penetration tests targeting staff social engineering resistance.
+\end{itemize}
+
+\section{Further reading}\label{further-reading-11}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/overview}{Coercion \& Duress overview}: how the pages of this sub-section fit together
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/defensive-design-principles}{Defensive Design Principles}: the reasoning behind these controls
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/wallet-and-key-architecture}{Wallet and Key Architecture}: the custody design the structural items assume
+\item
+  \href{https://frameworks.securityalliance.dev/physical-security/coercion-and-duress/personal-and-family-safety}{Personal and Family Safety}: the individual habits behind the day 1-7 items
+\end{itemize}
